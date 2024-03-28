@@ -1,0 +1,131 @@
+:root {
+  --white-color: #fff;
+  --black-color: #140a00;
+  --blue-color: #045fd4;
+  --red-color: #ff0000;
+  --gray-dark-color: #909090;
+  --gray-light-color: #e1e1e1;
+
+  --padding: 12px;
+  --avatar-size: 36px;
+
+  --font-large: 18px;
+  --font-medium: 14px;
+  --font-small: 12px;
+  --font-micro: 10px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+header {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  padding: var(--padding);
+  background-color: var(--white-color);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 5fr 2fr;
+  position: relative;
+  top: 50px;
+}
+
+/* 동영상 */
+.player {
+  text-align: center;
+  background-color: var(--black-color);
+}
+
+.player iframe {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 1000px;
+}
+
+/* 오른쪽 영상 정보 */
+.info {
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  position: relative;
+}
+
+.info .hashtags {
+  display: flex;
+  color: var(--blue-color);
+  font-size: var(--font-small);
+}
+
+.info .hashtags ul {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+}
+
+.info .hashtags li {
+  margin-right: 5px;
+}
+
+.info .title .title {
+  font-size: var(--font-large);
+  font-weight: bold;
+}
+
+.info .views {
+  font-size: var(--font-small);
+  color: var(--gray-dark-color);
+}
+
+.actions ul {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  list-style-type: none;
+  color: var(--gray-dark-color);
+  font-size: var(--font-medium);
+}
+
+.actions ul .circle {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: var(--gray-light-color);
+  border-radius: 100%;
+}
+
+.actions ul li {
+}
+
+.UpNext ul {
+  list-style-type: none;
+}
+
+.UpNext ul .circle {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: var(--gray-light-color);
+  border-radius: 100%;
+}
