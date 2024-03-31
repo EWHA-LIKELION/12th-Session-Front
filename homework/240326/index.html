@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+  <script
+    src="https://kit.fontawesome.com/32171d6764.js"
+    crossorigin="anonymous"
+  ></script>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,12 +14,27 @@
   <body>
     <div class="wrapper">
       <header>
-        <div></div>
-        <span class="title">navigation</span>
+        <div class="logo">
+          <!--유튜브 로고-->
+          <i class="fa-brands fa-youtube"></i>
+        </div>
+        <div class="icons">
+          <i class="fa-solid fa-circle"></i>
+          <i class="fa-solid fa-circle"></i>
+          <i class="fa-solid fa-circle"></i>
+          <i class="fa-solid fa-circle"></i>
+          <div class="search2">
+            <!-- 검색창-->
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          <i class="fa-regular fa-circle"></i>
+        </div>
       </header>
 
       <section class="container">
+        <!--헤더 하단 내용-->
         <div class="player">
+          <!--유튜브 영상-->
           <iframe
             width="560"
             height="315"
@@ -37,192 +56,206 @@
             </ul>
           </div>
           <div class="title">
-            <span class="title">
-              잔나비 [JANNABI] - '초록을거머쥔우리는' (Live from Monkey Fortress
-              Studios)
-            </span>
-            <button class="morebutton">
-              <i class="fa-solid fa-caret-down"></i>
-            </button>
-          </div>
-          <div class="views">
-            <span class="views"> 조회수 72만회 1년 전 </span>
+            <div class="group">
+              <div class="title">
+                잔나비 [JANNABI] - '초록을거머쥔우리는' (Live from Monkey
+                Fortress Studios)
+              </div>
+              <div class="morebutton">
+                <i class="fa-solid fa-caret-down"></i>
+              </div>
+            </div>
+            <div class="views">
+              <span class="views"> 72K views 452 comments</span>
+            </div>
           </div>
 
           <div class="actions">
+            <!-- 반응 버튼 -->
             <ul>
               <li>
-                <div class="circle"></div>
+                <i class="fas fa-thumbs-up"></i>
+                <!-- 좋아요 -->
                 <span>1.6K</span>
               </li>
               <li>
-                <div class="circle"></div>
-                <span>120</span>
+                <i class="fas fa-thumbs-down"></i>
+                <!-- 싫어요-->
+                <span> 120</span>
               </li>
               <li>
-                <div class="circle"></div>
-                <span>Share</span>
+                <i class="fas fa-share"></i>
+                <!-- 공유-->
+                <span> Share</span>
               </li>
               <li>
-                <div class="circle"></div>
-                <span>Save</span>
+                <i class="fa-solid fa-arrow-down"></i>
+                <!-- 다운로드-->
+                <span> Save</span>
               </li>
               <li>
-                <div class="circle"></div>
-                <span>Report</span>
+                <i class="fa-solid fa-plus"></i>
+                <!--report-->
+                <span> Report</span>
               </li>
             </ul>
           </div>
-        </div>
 
-        <div class="channel">
-          <div class="metadata">
-            <img src="./Jannabi profile.jpg" />
-            <div class="info">
-              <span class="name"> 잔나비 JANNABI </span>
-              <span class="subscribers">24M subscribers</span>
+          <div class="channel">
+            <!--영상 채널 정보-->
+            <div class="metadata">
+              <img src="./Jannabi profile.jpg" />
+              <div class="info">
+                <span class="name"> 잔나비 JANNABI </span>
+                <span class="subscribers">24M subscribers</span>
+              </div>
             </div>
+            <botton class="subscribe">SUBSCRIBE</botton>
           </div>
-          <botton class="subscribe">SUBSCRIBE</botton>
         </div>
 
-        <div class="UpNext">
-          <span class="title">Recommended</span>
+        <div class="comment">
+          <!-- 댓글-->
+          <span class="comment">Comments 452</span>
           <ul>
             <li class="item">
-              <div class="circle"></div>
+              <img src="./푸바오.jpg" />
               <div class="info">
-                <span class="title">잔나비영상1</span
-                ><span class="name">잔나비 JANNABI 1</span
-                ><span class="views">87K views</span>
+                <div class="info1">
+                  <span class="username">푸바오</span
+                  ><span class="times">1 month ago</span>
+                </div>
+                <div class="info2">
+                  <span class="content">노래가 너무 좋아요~</span
+                  ><span class="followcm">Following comments +13</span>
+                </div>
               </div>
-              <button class="morebotton">
-                <i class="fa-solid fa-ellipsis-vertical"></i>
-              </button>
+              <div class="button">
+                <div class="likebutton">
+                  <!-- 좋아요 버튼-->
+                  <i class="fa-regular fa-thumbs-up"></i>
+                  <div>1.6K</div>
+                </div>
+                <div class="dislikebutton">
+                  <!-- 싫어요 버튼-->
+                  <i class="fa-regular fa-thumbs-down"></i>
+                  <div class="value">120</div>
+                </div>
+              </div>
+            </li>
+
+            <li class="item">
+              <img src="./아이바오.jpg" />
+              <div class="info">
+                <div class="info1">
+                  <span class="username">아이바오</span
+                  ><span class="times">1 month ago</span>
+                </div>
+                <div class="info2">
+                  <span class="content"
+                    >5월에 잔디밭에서 들으면 더 힐링될 것 같아요ㅎㅎ</span
+                  ><span class="followcm">Following comments +13</span>
+                </div>
+              </div>
+              <div class="button">
+                <div class="likebutton">
+                  <i class="fa-regular fa-thumbs-up"></i>
+                  <div>1.6K</div>
+                </div>
+                <div class="dislikebutton">
+                  <i class="fa-regular fa-thumbs-down"></i>
+                  <div class="value">120</div>
+                </div>
+              </div>
             </li>
             <li class="item">
-              <div class="circle"></div>
+              <img src="./러바오.jpg" />
               <div class="info">
-                <span class="title">잔나비영상1</span
-                ><span class="name">잔나비 JANNABI 1</span
-                ><span class="views">87K views</span>
+                <div class="info1">
+                  <span class="username">러바오</span
+                  ><span class="times">1 month ago</span>
+                </div>
+                <div class="info2">
+                  <span class="content"
+                    >저의 잔나비 최애 곡이 이 노래랍니다 유명해졌으면!!</span
+                  ><span class="followcm">Following comments +13</span>
+                </div>
               </div>
-              <button class="morebotton">
-                <i class="fa-solid fa-ellipsis-vertical"></i>
-              </button>
+              <div class="button">
+                <div class="likebutton">
+                  <i class="fas fa-thumbs-up"></i>
+                  <div>1.6K</div>
+                </div>
+                <div class="dislikebutton">
+                  <i class="fa-regular fa-thumbs-down"></i>
+                  <div class="value">120</div>
+                </div>
+              </div>
             </li>
             <li class="item">
-              <div class="circle"></div>
+              <img src="./후루바오.jpg" />
               <div class="info">
-                <span class="title">잔나비영상1</span
-                ><span class="name">잔나비 JANNABI 1</span
-                ><span class="views">87K views</span>
+                <div class="info1">
+                  <span class="username">후루바오</span
+                  ><span class="times">1 month ago</span>
+                </div>
+                <div class="info2">
+                  <span class="content"
+                    >밴드버전으로 들으니까 색다르네요~ 잘 듣고 갑니다^^</span
+                  ><span class="followcm">Following comments +13</span>
+                </div>
               </div>
-              <button class="morebotton">
-                <i class="fa-solid fa-ellipsis-vertical"></i>
-              </button>
-            </li>
-            <li class="item">
-              <div class="circle"></div>
-              <div class="info">
-                <span class="title">잔나비영상1</span
-                ><span class="name">잔나비 JANNABI 1</span
-                ><span class="views">87K views</span>
+              <div class="button">
+                <div class="likebutton">
+                  <i class="fa-regular fa-thumbs-up"></i>
+                  <div>1.6K</div>
+                </div>
+                <div class="dislikebutton">
+                  <i class="fa-regular fa-thumbs-down"></i>
+                  <div class="value">120</div>
+                </div>
               </div>
-              <button class="morebotton">
-                <i class="fa-solid fa-ellipsis-vertical"></i>
-              </button>
             </li>
           </ul>
         </div>
 
-        <div class="comment">
-          <span class="comment">Comments 332</span>
+        <div class="recommend">
+          <!-- 추천 영상 목록-->
+          <span class="title">Recommended</span>
           <ul>
             <li class="item">
-              <i class="fa-solid fa-circle"></i>
+              <img src="./Yerin Baek.jpg" alt="" />
               <div class="info">
-                <span class="username">푸바오</span
-                ><span class="times">1 month ago</span
-                ><span class="content">Good!</span
-                ><span class="followcm">Following comments +13</span>
+                <span class="title">𝐏𝐥𝐚𝐲𝐥𝐢𝐬𝐭🥀 백예린 플레이리스트</span
+                ><span class="name">때껄룩 TAKE A LOOK</span
+                ><span class="views">460K views</span>
               </div>
-              <button class="likebotton">
-                <i class="fa-solid fa-circle"></i>
-                <span>1.6K</span>
-              </button>
-              <button class="dislikebotton">
-                <i class="fa-solid fa-circle"></i>
-                <span>120</span>
-              </button>
             </li>
             <li class="item">
-              <i class="fa-solid fa-circle"></i>
+              <img src="AKMU.jpg" alt="" />
               <div class="info">
-                <span class="username">푸바오</span
-                ><span class="times">1 month ago</span
-                ><span class="content">Good!</span
-                ><span class="followcm">Following comments +13</span>
+                <span class="title">[Playlist]💘 AKMU(악뮤) 플레이리스트</span
+                ><span class="name">SEOUL MUSIC / 서울뮤직</span
+                ><span class="views">447K views</span>
               </div>
-              <button class="likebotton">
-                <i class="fa-solid fa-circle"></i>
-                <span>1.6K</span>
-              </button>
-              <button class="dislikebotton">
-                <i class="fa-solid fa-circle"></i>
-                <span>120</span>
-              </button>
             </li>
             <li class="item">
-              <i class="fa-solid fa-circle"></i>
+              <img src="KissOfLife.jpg" alt="" />
               <div class="info">
-                <span class="username">아이바오</span
-                ><span class="times">1 month ago</span
-                ><span class="content">Good!</span
-                ><span class="followcm">Following comments +13</span>
+                <span class="title"
+                  >키스오브라이프 노래 모음 (KISS OF LIFE Playlist)</span
+                ><span class="name">7aez</span
+                ><span class="views">11K views</span>
               </div>
-              <button class="likebotton">
-                <i class="fa-solid fa-circle"></i>
-                <span>1.6K</span>
-              </button>
-              <button class="dislikebotton">
-                <i class="fa-solid fa-circle"></i>
-                <span>120</span>
-              </button>
             </li>
             <li class="item">
-              <i class="fa-solid fa-circle"></i>
+              <img src="LUCY.jpg" alt="" />
               <div class="info">
-                <span class="username">러바오</span
-                ><span class="times">1 month ago</span
-                ><span class="content">Good!</span
-                ><span class="followcm">Following comments +13</span>
+                <span class="title"
+                  >LUCY LIVE CLIP - 히어로(Hero) (Unplugged Ver.)</span
+                ><span class="name">LUCY ISLAND</span
+                ><span class="views">103K views</span>
               </div>
-              <button class="likebotton">
-                <i class="fa-solid fa-circle"></i>
-                <span>1.6K</span>
-              </button>
-              <button class="dislikebotton">
-                <i class="fa-solid fa-circle"></i>
-                <span>120</span>
-              </button>
-            </li>
-            <li class="item">
-              <i class="fa-solid fa-circle"></i>
-              <div class="info">
-                <span class="username">후루바오</span
-                ><span class="times">1 month ago</span
-                ><span class="content">Good!</span
-                ><span class="followcm">Following comments +13</span>
-              </div>
-              <button class="likebotton">
-                <i class="fa-solid fa-circle"></i>
-                <span>1.6K</span>
-              </button>
-              <button class="dislikebotton">
-                <i class="fa-solid fa-circle"></i>
-                <span>120</span>
-              </button>
             </li>
           </ul>
         </div>
