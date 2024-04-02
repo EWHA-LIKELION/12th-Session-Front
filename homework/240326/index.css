@@ -1,6 +1,7 @@
 body {
-  padding: 100px;
   padding-left: 120px;
+  padding-right: 120px;
+  padding-top: 30px;
 }
 p{
   font-size: 20px;
@@ -27,6 +28,7 @@ p{
   align-items: center;
 }
 
+
 .container1 {
   height: 80px;
   display: flex;
@@ -41,19 +43,6 @@ p{
   padding-bottom: 10px;
 }
 
-.columnFlex{
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 700px;
-}
-
-.columnFlex2{
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 900px;
-}
 
 .background{
   background-color: pink;
@@ -82,6 +71,10 @@ p{
   padding-left: 100px;
 }
 
+.paddingLeft2{
+  padding-left: 10px;
+}
+
 .paddingRight{
   padding-right: 40px;
 }
@@ -98,12 +91,35 @@ p{
   gap: 60px;
 }
 
+@media only screen and (max-width: 1500px){
+  
+  .container7{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .container9{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
 .container8{
   display: grid;
   grid-template-columns: 100px 2fr 1fr;
   gap: 10px;
   align-items: center;
 }
+
+.container9{
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  justify-content: space-between;
+  gap: 20px;
+}
+
 
 .imageRound{
   border-radius: 10px;
@@ -136,7 +152,6 @@ p{
 }
 
 .font{
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   padding-left: 20px;
   padding-bottom: 20px;
 }
@@ -146,3 +161,4 @@ p{
   top: 0;
   background: white
 }
+
