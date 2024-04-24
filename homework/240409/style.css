@@ -1,0 +1,267 @@
+body {
+  background-color: #ebddae;
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "title things"
+    "calendar done";
+  justify-content: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#Title {
+  grid-area: title;
+  width: fit-content;
+}
+
+.MY {
+  color: var(--black, #222);
+  font-family: "Work Sans";
+  font-size: 128px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  margin-bottom: 0;
+  margin-top: 73px;
+  margin-left: 85px;
+  margin-right: 95px;
+  width: fit-content;
+}
+
+.DD {
+  color: var(--black, #222);
+  font-family: "Work Sans";
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  margin-top: 0;
+  margin-left: 85px;
+  margin-bottom: 195px;
+  width: fit-content;
+}
+
+#Calendar {
+  grid-area: calendar;
+  margin-left: 61px;
+  margin-bottom: 65px;
+  margin-right: 71px;
+  width: fit-content;
+}
+
+#Things_to_do {
+  grid-area: things;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 104px;
+  margin-right: 100px;
+  margin-bottom: 28px;
+}
+
+.TTD {
+  color: var(--black, #222);
+  font-family: "Work Sans";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  margin-bottom: 31px;
+}
+
+.write {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#square {
+  width: 60px;
+  height: 100%;
+  border: 2px solid var(--green, #258b0b);
+  background: var(--white, #ebebeb);
+}
+
+#textarea {
+  margin: 0;
+  border: 2px solid var(--green, #258b0b);
+  border-left: none;
+  background: var(--white, #ebebeb);
+  color: var(--black, #222);
+  font-family: "Noto Sans KR";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  padding: 14px;
+  inline-size: 613px;
+  resize: none;
+  outline: none;
+  position: relative;
+}
+
+[contenteditable="true"]:empty:before {
+  content: attr(placeholder);
+  color: grey;
+}
+#textarea::-webkit-scrollbar {
+  display: none;
+}
+
+.plus-button {
+  margin-left: 26px;
+}
+
+#Done {
+  grid-area: done;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.D {
+  color: var(--black, #222);
+  font-family: "Work Sans";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  margin-bottom: 31px;
+}
+
+ul {
+  list-style: none;
+  height: 296px;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+::-webkit-scrollbar {
+  background-color: transparent;
+}
+
+li {
+  display: flex;
+  align-items: center;
+}
+
+.deleteBtn {
+  background: url("images/frame-6.png") no-repeat;
+  border: none;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  margin-left: 28px;
+  padding: 0px;
+}
+
+.doneBtn {
+  width: 58px;
+  border: 2px solid var(--green, #258b0b);
+  background: var(--white, #ebebeb);
+  border-right: none;
+  border-top: none;
+  cursor: pointer;
+  color: transparent;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.doBox {
+  width: 615px;
+  height: auto;
+  gap: 8px;
+  border: 2px solid var(--green, #258b0b);
+  border-top: 0px;
+  background: var(--white, #ebebeb);
+  color: var(--black, #222);
+  font-family: "Noto Sans KR";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 14px;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+.doneBox {
+  width: 615px;
+  height: auto;
+  gap: 8px;
+  border: 2px solid var(--green, #258b0b);
+  background: transparent;
+  color: var(--black, #222);
+  font-family: "Noto Sans KR";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 14px;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+.d-list li:first-child .doneBox {
+  border-top: 2px solid var(--green, #258b0b);
+}
+
+.d-list li:not(:first-child) .doneBox {
+  border-top: none;
+}
+
+.reBtn {
+  width: 58px;
+  border: 2px solid var(--green, #258b0b);
+  background: transparent;
+  border-right: none;
+  cursor: pointer;
+  color: transparent;
+  overflow: hidden;
+  background: url("images/ellipse-1.png") no-repeat;
+  background-position: center;
+  background-size: 20px;
+}
+
+.d-list li:first-child .reBtn {
+  border-top: 2px solid var(--green, #258b0b);
+}
+
+.d-list li:not(:first-child) .reBtn {
+  border-top: none;
+}
+
+@media (max-width: 1100px) {
+  body {
+    grid-template-columns: 1fr; /* 모든 컬럼을 하나로 합침 */
+    grid-template-rows: auto auto auto auto; /* 필요한 만큼 행 추가 */
+    grid-template-areas:
+      "title"
+      "calendar"
+      "things"
+      "done";
+  }
+
+  #Title {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  #Calendar {
+    margin: 0px 0px 85px 85px;
+    padding: 0px;
+  }
+
+  #Things_to_do,
+  #Done {
+    margin: 0px 0px 85px 110px;
+  }
+}
