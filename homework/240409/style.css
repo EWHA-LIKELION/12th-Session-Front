@@ -235,16 +235,6 @@ li {
   /* background-size: 20px; */
 }
 
-width: 58px;
-border: 2px solid var(--green, #258b0b);
-background: var(--white, #ebebeb);
-border-right: none;
-border-top: none;
-cursor: pointer;
-color: transparent;
-white-space: nowrap;
-overflow: hidden;
-
 .d-list li:first-child .reBtn {
   border-top: 2px solid var(--green, #258b0b);
 }
