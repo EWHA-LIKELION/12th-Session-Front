@@ -16,6 +16,7 @@ body {
 #Title {
   grid-area: title;
   width: fit-content;
+  margin: 96px 75px 195px 85px;
 }
 
 .MY {
@@ -25,10 +26,7 @@ body {
   font-style: normal;
   font-weight: 900;
   line-height: normal;
-  margin-bottom: 0;
-  margin-top: 73px;
-  margin-left: 85px;
-  margin-right: 95px;
+  margin: 0;
   width: fit-content;
 }
 
@@ -39,17 +37,13 @@ body {
   font-style: normal;
   font-weight: 900;
   line-height: normal;
-  margin-top: 0;
-  margin-left: 85px;
-  margin-bottom: 195px;
+  margin: 0;
   width: fit-content;
 }
 
 #Calendar {
   grid-area: calendar;
-  margin-left: 61px;
-  margin-bottom: 65px;
-  margin-right: 71px;
+  margin: 0 51px 81px 61px;
   width: fit-content;
 }
 
@@ -58,9 +52,7 @@ body {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: 104px;
-  margin-right: 100px;
-  margin-bottom: 28px;
+  margin: 127px 100px 28px 0;
 }
 
 .TTD {
@@ -136,17 +128,33 @@ body {
 
 ul {
   list-style: none;
-  height: 296px;
   margin: 0;
   padding: 0;
   overflow-x: auto; /* 일정 길이를 넘어가면 스크롤바 생성 */
 }
 
-::-webkit-scrollbar {
-  width: 0;
+.ttd-list {
+  height: 236px; /* 길이 지정 */
 }
 
-::-webkit-scrollbar {
+.d-list {
+  height: 297px; /* 길이 지정 */
+}
+
+::-webkit-scrollbar { /* 스크롤바 스타일 지정 */
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #d6c795;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #258b0b; /* 움직이는 스크롤바에 마우스를 올렸을때의 배경색깔 */
+}
+
+::-webkit-scrollbar-track {
   background-color: transparent;
 }
 
@@ -162,6 +170,7 @@ li {
   height: 22px;
   cursor: pointer; /* 커서 포인터로 변환 */
   margin-left: 28px;
+  margin-right: 28px;
   padding: 0px;
 }
 
@@ -232,7 +241,7 @@ li {
   background-position: center;
   white-space: nowrap;
   overflow: hidden;
-  /* background-size: 20px; */
+  background-size: 20px;
 }
 
 .d-list li:first-child .reBtn {
@@ -243,7 +252,7 @@ li {
   border-top: none;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1400px) {
   /* 가로가 1100px 밑으로 줄어들 경우, div가 세로로만 나열되는 반응형 */
   body {
     grid-template-columns: 1fr; /* 모든 컬럼을 하나로 합치기 */
@@ -253,20 +262,21 @@ li {
       "calendar"
       "things"
       "done";
+    grid
   }
 
   #Title {
-    margin: 0px;
+    margin: 100px;
     padding: 0px;
   }
 
   #Calendar {
-    margin: 0px 0px 85px 85px;
+    margin: 0px 85px 85px 75px;
     padding: 0px;
   }
 
   #Things_to_do,
   #Done {
-    margin: 0px 0px 85px 110px;
+    margin: 30px 120px;
   }
 }
