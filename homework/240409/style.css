@@ -103,10 +103,12 @@ body {
   position: relative;
 }
 
+/* 텍스트 엘리먼트면서 텍스트가 아직 입력되지 않은 상태일 때, placeholder 노출 */
 [contenteditable="true"]:empty:before {
   content: attr(placeholder);
   color: grey;
 }
+
 #textarea::-webkit-scrollbar {
   display: none;
 }
@@ -137,7 +139,7 @@ ul {
   height: 296px;
   margin: 0;
   padding: 0;
-  overflow-x: auto;
+  overflow-x: auto; /* 일정 길이를 넘어가면 스크롤바 생성 */
 }
 
 ::-webkit-scrollbar {
@@ -158,7 +160,7 @@ li {
   border: none;
   width: 22px;
   height: 22px;
-  cursor: pointer;
+  cursor: pointer; /* 커서 포인터로 변환 */
   margin-left: 28px;
   padding: 0px;
 }
@@ -189,8 +191,8 @@ li {
   font-weight: 400;
   line-height: normal;
   padding: 14px;
-  white-space: normal;
-  overflow-wrap: break-word;
+  white-space: normal; /* 영어도 한글처럼 정해진 width를 초과하면 밑으로 길어지도록.  */
+  overflow-wrap: break-word; /* 영어도 한글처럼 정해진 width를 초과하면 밑으로 길어지도록.  */
 }
 
 .doneBox {
@@ -211,11 +213,11 @@ li {
 }
 
 .d-list li:first-child .doneBox {
-  border-top: 2px solid var(--green, #258b0b);
+  border-top: 2px solid var(--green, #258b0b); /* 리스트의 첫 번째 항목은 윗테두리가 있어야 함 */
 }
 
 .d-list li:not(:first-child) .doneBox {
-  border-top: none;
+  border-top: none; /* 두 번째 항목부터는 윗테두리가 있을 경우 위 항목의 아래 테두리와 겹쳐 두꺼워지므로 없앰 */
 }
 
 .reBtn {
@@ -228,8 +230,20 @@ li {
   overflow: hidden;
   background: url("images/ellipse-1.png") no-repeat;
   background-position: center;
-  background-size: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  /* background-size: 20px; */
 }
+
+width: 58px;
+border: 2px solid var(--green, #258b0b);
+background: var(--white, #ebebeb);
+border-right: none;
+border-top: none;
+cursor: pointer;
+color: transparent;
+white-space: nowrap;
+overflow: hidden;
 
 .d-list li:first-child .reBtn {
   border-top: 2px solid var(--green, #258b0b);
@@ -240,8 +254,9 @@ li {
 }
 
 @media (max-width: 1100px) {
+  /* 가로가 1100px 밑으로 줄어들 경우, div가 세로로만 나열되는 반응형 */
   body {
-    grid-template-columns: 1fr; /* 모든 컬럼을 하나로 합침 */
+    grid-template-columns: 1fr; /* 모든 컬럼을 하나로 합치기 */
     grid-template-rows: auto auto auto auto; /* 필요한 만큼 행 추가 */
     grid-template-areas:
       "title"
