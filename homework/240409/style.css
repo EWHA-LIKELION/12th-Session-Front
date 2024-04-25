@@ -16,7 +16,7 @@ body {
 #Title {
   grid-area: title;
   width: fit-content;
-  margin: 96px 75px 195px 85px;
+  margin: 86px 75px 195px 75px;
 }
 
 .MY {
@@ -43,7 +43,7 @@ body {
 
 #Calendar {
   grid-area: calendar;
-  margin: 0 51px 81px 61px;
+  margin: 0 51px 71px 51px;
   width: fit-content;
 }
 
@@ -52,7 +52,7 @@ body {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
-  margin: 127px 94px 28px 0;
+  margin: 117px 90px 28px 0;
 }
 
 .TTD {
@@ -142,16 +142,6 @@ ul {
   height: 297px; /* 길이 지정 */
 }
 
-::-webkit-scrollbar {
-  /* ul 스크롤바 스타일 지정 */
-  width: 25px;
-}
-
-::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  background-color: transparent;
-}
-
 ul::-webkit-scrollbar {
   /* ul 스크롤바 스타일 지정 */
   width: 10px;
@@ -182,7 +172,7 @@ li {
   height: 22px;
   cursor: pointer; /* 커서 포인터로 변환 */
   margin-left: 28px;
-  padding-right: 41px;
+  margin-right: 25px;
 }
 
 .doneBtn {
