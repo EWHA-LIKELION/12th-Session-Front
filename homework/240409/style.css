@@ -52,7 +52,7 @@ body {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
-  margin: 127px 100px 28px 0;
+  margin: 127px 94px 28px 0;
 }
 
 .TTD {
@@ -106,7 +106,8 @@ body {
 }
 
 .plus-button {
-  margin-left: 26px;
+  margin-left: 25px;
+  margin-right: 23px;
 }
 
 #Done {
@@ -141,16 +142,27 @@ ul {
   height: 297px; /* 길이 지정 */
 }
 
-::-webkit-scrollbar { /* 스크롤바 스타일 지정 */
-  width: 10px;
+::-webkit-scrollbar {
+  /* ul 스크롤바 스타일 지정 */
+  width: 25px;
 }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
+  background-color: transparent;
+}
+
+ul::-webkit-scrollbar {
+  /* ul 스크롤바 스타일 지정 */
+  width: 10px;
+}
+
+ul::-webkit-scrollbar-thumb {
+  border-radius: 10px;
   background-color: #d6c795;
 }
 
-::-webkit-scrollbar-thumb:hover {
+ul::-webkit-scrollbar-thumb:hover {
   background: #258b0b; /* 움직이는 스크롤바에 마우스를 올렸을때의 배경색깔 */
 }
 
@@ -170,8 +182,7 @@ li {
   height: 22px;
   cursor: pointer; /* 커서 포인터로 변환 */
   margin-left: 28px;
-  margin-right: 28px;
-  padding: 0px;
+  padding-right: 41px;
 }
 
 .doneBtn {
@@ -253,7 +264,7 @@ li {
 }
 
 @media (max-width: 1400px) {
-  /* 가로가 1100px 밑으로 줄어들 경우, div가 세로로만 나열되는 반응형 */
+  /* 가로가 1400px 밑으로 줄어들 경우, div가 세로로만 나열되는 반응형 */
   body {
     grid-template-columns: 1fr; /* 모든 컬럼을 하나로 합치기 */
     grid-template-rows: auto auto auto auto; /* 필요한 만큼 행 추가 */
@@ -262,7 +273,6 @@ li {
       "calendar"
       "things"
       "done";
-    grid
   }
 
   #Title {
