@@ -1,8 +1,18 @@
 const form = document.querySelector(".write");
 
+const popupBtn = document.querySelector(".TTD");
+
 // 초기화 함수
 const init = () => {
   form.addEventListener("submit", addTodoItem);
+  popupBtn.addEventListener("click", displayForm);
+};
+
+// 입력창 표시/숨기기 함수
+const displayForm = () => {
+  form.style.display == "none"
+    ? (form.style.display = "flex")
+    : (form.style.display = "none");
 };
 
 //할 일 추가 함수
