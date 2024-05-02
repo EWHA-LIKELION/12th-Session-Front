@@ -37,6 +37,7 @@
           <div class="text">Search</div>
         </div>
       </div>
+
       <div class="topLine"></div>
 
       <section class="content">
@@ -48,9 +49,9 @@
                   <img src="button_bad.png" />
                 </div>
               </div>
-              <div class="button_good--clicked">
+              <div class="button_good">
                 <div>
-                  <img src="button_good--clicked.png" />
+                  <img src="button_good.png" />
                 </div>
               </div>
               <div class="button_soso">
@@ -129,7 +130,6 @@
                 <div><div>27</div></div>
               </div>
             </div>
-
             <div class="toggle_calander">
               <div>
                 <img src="toggle_calander.png" />
@@ -145,48 +145,32 @@
           <div class="todoLine"></div>
           <div class="top">
             <div class="Todo">To do</div>
-            <div class="plus">
+            <button class="plus">
               <div>
                 <img src="button_plus.png" />
               </div>
-            </div>
+            </button>
           </div>
           <div class="middle">
             <div class="frame">
-              <div class="box_addtodo">
-                <div class="input">할 일을 입력해 주세요.</div>
-                <div class="button_add">
+              <form class="box_addtodo">
+                <input class="input" placeholder="할 일을 입력해 주세요." />
+                <button class="button_add">
                   <div></div>
                   <img src="button_add.png" />
-                </div>
-              </div>
-              <div class="box_todo">
-                <div></div>
-                <div>오늘 할 일</div>
-                <div>
-                  <div>
-                    <img src="button_delete.png" />
-                  </div>
-                </div>
-              </div>
-              <div class="box_todo">
-                <div></div>
-                <div>오늘 할 일</div>
-                <div>
-                  <div>
-                    <img src="button_delete.png" />
-                  </div>
-                </div>
-              </div>
-              <div class="box_todo">
-                <div></div>
-                <div>오늘 할 일</div>
-                <div>
-                  <div>
-                    <img src="button_delete.png" />
-                  </div>
-                </div>
-              </div>
+                </button>
+              </form>
+              <ul class="box_todo">
+                <li>
+                  <button class="todoToDone"></button>
+                  <span>오늘 할 일</span>
+                  <button class="todoDel">
+                    <div>
+                      <img src="button_delete.png" />
+                    </div>
+                  </button>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -194,39 +178,19 @@
         <div class="done">
           <div class="middle">
             <div class="frame">
-              <div class="box_done">
-                <div class="checkbox">
-                  <div class="checkmark"><img src="button_done.png" /></div>
-                </div>
-                <div class="task_description">오늘 한 일</div>
-                <div class="delete_button">
-                  <div class="inner_delete_button">
-                    <img src="button_delete.png" />
-                  </div>
-                </div>
-              </div>
-              <div class="box_done">
-                <div class="checkbox">
-                  <div class="checkmark"><img src="button_done.png" /></div>
-                </div>
-                <div class="task_description">오늘 한 일</div>
-                <div class="delete_button">
-                  <div class="inner_delete_button">
-                    <img src="button_delete.png" />
-                  </div>
-                </div>
-              </div>
-              <div class="box_done">
-                <div class="checkbox">
-                  <div class="checkmark"><img src="button_done.png" /></div>
-                </div>
-                <div class="task_description">오늘 한 일</div>
-                <div class="delete_button">
-                  <div class="inner_delete_button">
-                    <img src="button_delete.png" />
-                  </div>
-                </div>
-              </div>
+              <ul class="box_done">
+                <li>
+                  <button class="checkbox">
+                    <img src="button_done.png" />
+                  </button>
+                  <span class="task_description">오늘 한 일</span>
+                  <button class="doneDel">
+                    <div class="inner_delete_button">
+                      <img src="button_delete.png" />
+                    </div>
+                  </button>
+                </li>
+              </ul>
             </div>
           </div>
 
@@ -238,5 +202,6 @@
         </div>
       </section>
     </div>
+    <script src="TODO.js"></script>
   </body>
 </html>

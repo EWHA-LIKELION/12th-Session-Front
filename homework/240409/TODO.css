@@ -4,6 +4,21 @@
     url("Pretendard-Medium.woff") format("woff");
 }
 
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+input {
+  border: none;
+}
+ul,
+li {
+  list-style: none;
+  padding-left: 0px;
+  margin: 0px;
+}
+
 body {
   font-family: "Pretendard", sans-serif;
 }
@@ -166,7 +181,6 @@ body {
 }
 
 /* .content*/
-
 .content {
   align-self: stretch;
   height: 581px;
@@ -180,6 +194,7 @@ body {
   display: inline-flex;
 }
 
+/* today */
 .today {
   width: 316px;
   height: 524px;
@@ -214,7 +229,7 @@ body {
 }
 
 .button_bad,
-.button_good--clicked,
+.button_good,
 .button_soso,
 .button_happy {
   width: 45px;
@@ -381,7 +396,7 @@ body {
   border: 1px #e8e8e8 solid;
 }
 
-/* ‼️‼️‼️ todo ‼️‼️‼️  */
+/* todo */
 .todo {
   width: 427px;
   height: 524px;
@@ -477,6 +492,8 @@ body {
     font-family: Pretendard;
     font-weight: 400;
     word-wrap: break-word;
+    position: relative;
+    bottom: 6px;
   }
   .button_add {
     width: 22px;
@@ -498,59 +515,58 @@ body {
 .button_add > img {
   width: 22px;
   height: 22px;
-  position: absolute;
+  position: relative;
+  right: 5px;
 }
 
-.box_todo {
+ul.box_todo > li {
   width: 335px;
   height: 22px;
   padding: 16px;
   background: white;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
   border-radius: 15px;
-  justify-content: flex-start;
-  align-items: center;
   gap: 16px;
   display: inline-flex;
-}
-
-.box_todo > div:first-child {
-  width: 20px;
-  height: 20px;
-  background: #e8e8e8;
-  border-radius: 4px;
-}
-
-.box_todo > div:nth-child(2) {
-  width: 263px;
-  color: black;
-  font-size: 16px;
-  font-family: Pretendard;
-  font-weight: 400;
-  word-wrap: break-word;
-}
-
-.box_todo > div:last-child {
-  width: 20px;
-  height: 20px;
-  padding-top: 5px;
-  padding-bottom: 4.51px;
-  padding-left: 5px;
-  padding-right: 4.26px;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  div {
-    width: 10.74px;
-    height: 10.49px;
-    position: relative;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-bottom: 17px;
+  button.todoToDone {
+    width: 20px;
+    height: 20px;
+    background: #e8e8e8;
+    border-radius: 4px;
+  }
+  span {
+    width: 263px;
+    color: black;
+    font-size: 16px;
+    font-family: Pretendard;
+    font-weight: 400;
+    word-wrap: break-word;
+  }
+  button.todoDel {
+    width: 20px;
+    height: 20px;
+    padding-top: 5px;
+    padding-bottom: 4.51px;
+    padding-left: 0px;
+    padding-right: 4.26px;
+    justify-content: center;
+    align-items: center;
     display: flex;
-    img {
+    div {
       width: 10.74px;
       height: 10.49px;
+      position: relative;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      display: flex;
+      img {
+        width: 10.74px;
+        height: 10.49px;
+      }
     }
   }
 }
@@ -594,60 +610,64 @@ body {
   }
 }
 
-.box_done {
+ul.box_done > li {
   width: 335px;
   height: 22px;
   padding: 16px;
-  border-bottom: 17px;
   background: white;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
   border-radius: 15px;
-  justify-content: flex-start;
-  align-items: center;
   gap: 16px;
   display: inline-flex;
-}
-
-.box_done > .checkbox {
-  width: 20px;
-  height: 20px;
-  position: relative;
-}
-
-.checkmark {
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  border: 2px white solid;
-}
-
-.box_done > .task_description {
-  width: 263px;
-  color: black;
-  font-size: 16px;
-  font-family: Pretendard;
-  font-weight: 400;
-  word-wrap: break-word;
-}
-
-.box_done > .delete_button {
-  width: 20px;
-  height: 20px;
-  padding-top: 5px;
-  padding-bottom: 4.51px;
-  padding-left: 5px;
-  padding-right: 4.26px;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  .inner_delete_button {
-    width: 10.74px;
-    height: 10.49px;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-bottom: 17px;
+  button.checkbox {
+    width: 20px;
+    height: 20px;
     position: relative;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    right: 5px;
+    bottom: 1px;
+    img {
+      width: 20px;
+      height: 20px;
+      border: 2px white solid;
+    }
+  }
+  span.task_description {
+    width: 263px;
+    height: 22px;
+    color: black;
+    font-size: 16px;
+    font-family: Pretendard;
+    font-weight: 400;
+    word-wrap: break-word;
+    display: inline-flex;
+    align-items: center;
+  }
+  button.doneDel {
+    width: 20px;
+    height: 20px;
+    padding-top: 5px;
+    padding-bottom: 4.51px;
+    padding-left: 0px;
+    padding-right: 4.26px;
+    justify-content: center;
+    align-items: center;
     display: flex;
+    div {
+      width: 10.74px;
+      height: 10.49px;
+      position: relative;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      display: flex;
+      img {
+        width: 10.74px;
+        height: 10.49px;
+      }
+    }
   }
 }
 
