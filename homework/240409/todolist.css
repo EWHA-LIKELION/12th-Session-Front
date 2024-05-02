@@ -203,6 +203,7 @@ div .secondcontainer .todo-input-items input {
   font-weight: 300;
   line-height: normal;
   padding-left: 12px;
+  white-space: normal;
 }
 
 div .secondcontainer .todo-form {
