@@ -1,0 +1,222 @@
+.todo-form {
+  display: none;
+  padding-top: 10px;
+  margin-left: 20px;
+  margin-right: 25px;
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  border-bottom-color: #ff978d;
+}
+.todoForm {
+  display: flex;
+}
+input:focus {
+  outline: none;
+} /* outline 테두리 없애기 */
+input[type=checkbox]
+{height: 21px;
+  width: 21px;
+  border: 2px solid#4b5563;
+  border-radius: 0%;
+}
+
+.todo-checkbox {
+  height: 21px;
+  width: 21px;
+  border-radius: 0%;
+}
+
+.todo-input-button {
+  margin-left: 790px;
+  background-color: transparent;
+  border: 0;
+}
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+}
+.todo-input {
+  background-color: transparent;
+  border-width: 0;
+  font-size: 21px;
+}
+.weekToDo {
+}
+.weekToDo-top {
+  display: flex;
+  justify-content: space-evenly;
+}
+.weekToDo-container {
+  background-color: #f8f8f8;
+  min-height: 92px;
+  width: 1166px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 10px`;
+  border-radius: 24px;
+  border-style: solid;
+  border-color: #cbcbcb;
+  border-width: 1px;
+  box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.2);
+  overflow:hidden;
+		
+}
+.middle-contents {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+.calender-container {
+  background-color: #f8f8f8;
+  height: 692px;
+  width: 602px;
+  border-radius: 24px;
+  margin-right: 33px;
+  border-style: solid;
+  border-color: #cbcbcb;
+  border-width: 1px;
+  box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.2);
+}
+.calender-container div {
+  text-align: center;
+  t
+}
+.todayToDo-container {
+  background-color: #f8f8f8;
+  height: 692px;
+  width: 516px;
+  box-sizing: border-box;
+  border-radius: 24px;
+  border-style: solid;
+  border-color: #cbcbcb;
+  border-width: 1px;
+  box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.2);
+}
+
+.todayToDo-container {
+  padding: 30px 30px 40px 26px;
+}
+.todoFirst {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 27px;
+}
+.todoSecond {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 27px;
+}
+.todoThird {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 27px;
+}
+.todoForm1 {
+  display: flex;
+}
+.todo-form1 {
+  margin-bottom: 13px;
+}
+.todo-input-button1 {
+  margin-left: 110px;
+  background-color: transparent;
+  border: 0;
+}
+.todo-input-button2 {
+  margin-left: 110px;
+  background-color: transparent;
+  border: 0;
+}
+.todo-input-button3 {
+  margin-left: 110px;
+  background-color: transparent;
+  border: 0;
+}
+.todo-form1 {
+  display: none;
+}
+.todoItem {
+  margin-left: 20px;
+}
+.todoItem1 {
+  margin-bottom: 10px;
+  background-color: #FFD7D3;
+}
+.todoItem2 {
+  margin-bottom: 10px;
+}
+.todoItem3 {
+  margin-bottom: 10px;
+}
+.checkbox {
+  height: 21px;
+  width: 21px;
+  border: 2px solid#4b5563;
+  border-radius: 0%;
+}
+
+.checkbox1 {
+  height: 21px;
+  width: 21px;
+  border: 2px solid#4b5563;
+  border-radius: 0%;
+}
+
+.todoText {
+  font-size: 24px;
+}
+.todoText1 {
+  font-size: 24px;
+}
+.todoText2 {
+  font-size: 24px;
+}
+.todoText3 {
+  font-size: 24px;
+}
+.todoDel {
+  margin-top: 7px;
+  margin-left: auto;
+}
+.todoDel1 {
+  margin-left: auto;
+}
+.todoDel2 {
+  margin-left: auto;
+}
+.todoDel3 {
+  margin-left: auto;
+}
+
+#form-first {
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  border-bottom-color: #f3575d;
+}
+#form-second {
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  border-bottom-color: #ff978d;
+}
+#form-third {
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  border-bottom-color: #ffbcb5;
+}
+.todo-input1 {
+  background-color: transparent;
+  border-width: 0;
+  font-size: 21px;
+}
+
+.todo-input2 {
+  background-color: transparent;
+  border-width: 0;
+  font-size: 21px;
+}
+
+.todo-input3 {
+  background-color: transparent;
+  border-width: 0;
+  font-size: 21px;
+}
