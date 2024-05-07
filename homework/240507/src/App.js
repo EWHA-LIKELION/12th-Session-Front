@@ -1,11 +1,9 @@
-// import { useState } from "react";
-// import Input from "./components/Input";
-// import Name from "./components/Name";
 import React from "react";
 import styled from "styled-components";
 import figma from "./images/figma.png";
 import front from "./images/front.png";
 import back from "./images/back.png";
+import Modal from "./components/Modal";
 
 function App() {
   return (
