@@ -22,72 +22,78 @@ const addTodoItem = () => {
   if (todoContent) printTodoItem(todoContent);
 };
 
-// // 입력 받은 할 일 출력 함수
-// const printTodoItem = (text) => {
-//   const todoItem = document.createElement("li");
-//   const todoText = document.createElement("span");
-//   const todoDel = document.createElement("button");
+// 입력 받은 할 일 출력 함수
+const printTodoItem = (text) => {
+  const todoItem = document.createElement("li");
+  const todoFlex = document.createElement("div");
+  const todoText = document.createElement("span");
+  const todoEnd = document.createElement("button");
 
-//   // [할 일 내용]
-//   todoText.innerText = text;
-//   todoText.addEventListener("click", toggleTodoToDone);
+  //스타일 추가
+  todoItem.classList.add("text listTodo");
+  todoFlex.classList.add("listFlex");
+  todoEnd.classList.add("square");
 
-//   // [할 일 삭제 버튼]
-//   todoDel.innerText = "삭제";
-//   todoDel.addEventListener("click", deleteTodoItem);
+  // [할 일 내용]
+  todoText.innerText = text;
+  todoEnd.addEventListener("click", toggleTodoToDone);
 
-//   // [생성한 요소들 연결]
-//   todoItem.appendChild(todoText);
-//   todoItem.appendChild(todoDel);
-//   document.querySelector(".todo-list").appendChild(todoItem);
+  // [할 일 삭제 버튼]
+  todoText.addEventListener("click", deleteTodoItem);
 
-//   // [input 창 초기화]
-//   document.querySelector(".todo-input").value = "";
-// };
+  // [생성한 요소들 연결]
+  todoItem.appendChild(todoFlex);
+  todoFlex.appendChild(todoEnd);
+  todoFlex.appendChild(todoText);
+  document.querySelector(".List").appendChild(todoItem);
 
-// // 할 일 삭제 함수
-// const deleteTodoItem = (e) => {
-//   const target = e.target.parentNode;
-//   document.querySelector(".todo-list").removeChild(target);
-// };
+  // [input 창 초기화]
+  document.querySelector(".todo-input").value = "";
+};
 
-// // 할 일 -> 끝낸 일 이동 함수
-// const toggleTodoToDone = (e) => {
-//   deleteTodoItem(e);
-//   printDoneItem(e.target.innerText);
-// };
+// 할 일 삭제 함수
+const deleteTodoItem = (e) => {
+  const target = e.target.parentNode;
+  document.querySelector(".todo-list").removeChild(target);
+};
 
-// // 끝낸 일 출력 함수
-// const printDoneItem = (text) => {
-//   const doneItem = document.createElement("li");
-//   const doneText = document.createElement("span");
-//   const doneDel = document.createElement("button");
+// 할 일 -> 끝낸 일 이동 함수
+const toggleTodoToDone = (e) => {
+  deleteTodoItem(e);
+  printDoneItem(e.target.innerText);
+};
 
-//   // [끝낸 일 내용]
-//   doneText.innerText = text;
-//   doneText.addEventListener("click", toggleDoneToDo);
+// 끝낸 일 출력 함수
+const printDoneItem = (text) => {
+  const doneItem = document.createElement("li");
+  const doneText = document.createElement("span");
+  const doneDel = document.createElement("button");
 
-//   // [끝낸 일 삭제 버튼]
-//   doneDel.innerText = "삭제";
-//   doneDel.addEventListener("click", deleteDoneItem);
+  // [끝낸 일 내용]
+  doneText.innerText = text;
+  doneText.addEventListener("click", toggleDoneToDo);
 
-//   // [생성한 요소들 연결]
-//   doneItem.appendChild(doneText);
-//   doneItem.appendChild(doneDel);
-//   document.querySelector(".done-list").appendChild(doneItem);
-// };
+  // [끝낸 일 삭제 버튼]
+  doneDel.innerText = "삭제";
+  doneDel.addEventListener("click", deleteDoneItem);
 
-// // 끝낸 일 삭제 함수
-// const deleteDoneItem = (e) => {
-//   const target = e.target.parentNode;
-//   document.querySelector(".done-list").removeChild(target);
-// };
+  // [생성한 요소들 연결]
+  doneItem.appendChild(doneText);
+  doneItem.appendChild(doneDel);
+  document.querySelector(".done-list").appendChild(doneItem);
+};
 
-// // 끝낸 일 -> 할 일 이동 함수
-// const toggleDoneToDo = (e) => {
-//   deleteDoneItem(e);
-//   printTodoItem(e.target.innerText);
-// };
+// 끝낸 일 삭제 함수
+const deleteDoneItem = (e) => {
+  const target = e.target.parentNode;
+  document.querySelector(".done-list").removeChild(target);
+};
+
+// 끝낸 일 -> 할 일 이동 함수
+const toggleDoneToDo = (e) => {
+  deleteDoneItem(e);
+  printTodoItem(e.target.innerText);
+};
 
 // 시작 함수
 init();

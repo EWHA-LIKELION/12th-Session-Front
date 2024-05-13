@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Input from "./components/Input";
 import Name from "./components/Name";
+import Modal from "./components/Modal";
 
 const lionList = [
   { name: "아기사자", nth: "12", isFE: true },
@@ -10,7 +11,19 @@ const lionList = [
 //데이터셋은 자유롭게 추가 및 변경이 가능합니다! 다양한 데이터를 만들어 띄워보세요 :)
 
 function App() {
-  return <Input></Input>;
+  const [modal, setModal] = useState(false);
+  const openModal = () => {
+    setModal(true);
+  };
+  return (
+    <>
+      {/* <Name name="아기사자" nth="12" isFE="true" /> */}
+      {/* <Input /> */}
+      <hr />
+      <button onClick={openModal}>모달 열기</button>
+      {modal ? <Modal setModal={setModal} /> : null}
+    </>
+  );
 }
 
 export default App;
