@@ -112,7 +112,7 @@ function App() {
         )}
       </BackgroundModal>
       <Cheering>
-        {nth} {track} {selectedLionName} 아가사자를 응원합니다!
+        {nth} {track} {selectedLionName} 아기사자를 응원합니다!
       </Cheering>
     </Wrapper>
   );
