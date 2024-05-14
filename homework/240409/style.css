@@ -1,342 +1,280 @@
-@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
-@import url("https://fonts.googleapis.com/css?family=Lemon:400");
-
-.x {
+.wrapperRed {
   background-color: #b31f25;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 100%;
-}
-
-.overlap-wrapper {
-  background-color: var(--variable-collection);
+  /* width: 100%;
+  height: 100vh; */
   width: 1280px;
   height: 832px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.overlap {
-  position: relative;
+.wrapperIvory {
+  background-color: #fff9ef;
+  display: flex;
   width: 1220px;
   height: 772px;
-  top: 30px;
-  left: 30px;
-  background-color: #fff9ef;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /* justify-content: center; */
 }
 
-.overlap-group {
-  position: absolute;
-  width: 382px;
-  height: 134px;
-  top: 30px;
-  left: 422px;
-}
-
-.group {
-  position: absolute;
-  width: 382px;
-  height: 112px;
-  top: 22px;
-  left: 0;
-}
-
-.div {
-  position: relative;
-  width: 376px;
-  height: 112px;
-}
-
-.text-wrapper {
-  position: absolute;
-  top: 8px;
-  left: 8px;
-  font-family: "Lemon", Helvetica;
-  font-weight: 400;
-  color: #eeb7b3;
-  font-size: 80px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.text-wrapper-2 {
-  top: 4px;
-  left: 4px;
-  color: #d36a6a;
-  position: absolute;
-  font-family: "Lemon", Helvetica;
-  font-weight: 400;
-  font-size: 80px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.text-wrapper-3 {
-  top: 0;
-  left: 0;
-  color: var(--variable-collection);
-  position: absolute;
-  font-family: "Lemon", Helvetica;
-  font-weight: 400;
-  font-size: 80px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.text-wrapper-4 {
-  position: absolute;
-  top: 0;
-  left: 125px;
-  font-family: "KoPubWorldBatang-Medium", Helvetica;
+.date {
+  font-family: "KoPubWorldBatang-Medium";
   font-weight: 500;
-  color: #000000;
   font-size: 24px;
-  letter-spacing: 0;
-  line-height: normal;
+  font-style: normal;
+  padding-top: 40px;
 }
 
-.vector {
-  position: absolute;
-  width: 6px;
-  height: 10px;
-  top: 14px;
-  left: 266px;
+.leftBracket {
+  padding-right: 20px;
 }
 
-.img {
-  position: absolute;
-  width: 6px;
-  height: 10px;
-  top: 14px;
-  left: 103px;
+.rightBracket {
+  padding-left: 20px;
 }
 
-.text-wrapper-5 {
-  position: absolute;
-  top: 262px;
-  left: 110px;
-  font-family: "Teachers Students-Regular", Helvetica;
-  font-weight: 400;
-  color: var(--variable-collection);
+.lemon1 {
+  font-family: "Lemon";
+  font-size: 80px;
+  color: #b31f25;
+  position: relative;
+  top: -218px;
+}
+
+.lemon2 {
+  font-family: "Lemon";
+  font-size: 80px;
+  color: #d36a6a;
+  position: relative;
+  top: -110px;
+  left: 4px;
+}
+
+.lemon3 {
+  font-family: "Lemon";
+  font-size: 80px;
+  color: #eeb7b3;
+  position: relative;
+  top: -2px;
+  left: 8px;
+}
+
+.title {
+  font-family: "Teachers Students-Regular";
   font-size: 64px;
-  letter-spacing: 0;
-  line-height: normal;
-  white-space: nowrap;
+  color: #b31f25;
+  display: flex;
+  flex-direction: row;
+}
+
+.titleTodo {
+  position: relative;
+  top: -120px;
+  left: 00px;
+}
+
+.titleDone {
+  position: relative;
+  top: -120px;
+  left: 85px;
 }
 
 .line {
-  position: absolute;
-  width: 396px;
   height: 1px;
-  top: 320px;
-  left: 110px;
-  object-fit: cover;
-}
-
-.text-wrapper-6 {
-  position: absolute;
-  top: 263px;
-  left: 713px;
-  font-family: "Teachers Students-Regular", Helvetica;
-  font-weight: 400;
-  color: var(--variable-collection);
-  font-size: 64px;
-  letter-spacing: 0;
-  line-height: normal;
-  white-space: nowrap;
-}
-
-.line-2 {
-  top: 321px;
-  left: 713px;
-  position: absolute;
   width: 396px;
-  height: 1px;
-  object-fit: cover;
+  background-color: #b31f25;
 }
 
-.todo-list-flex {
+.titleLineTodo {
+  position: relative;
+  left: -100px;
+  top: -60px;
+}
+
+.titleLineDone {
+  position: relative;
+  left: 0px;
+  top: -60px;
+}
+
+.List {
   display: flex;
   flex-direction: column-reverse;
+  flex-wrap: wrap;
+  position: relative;
 }
 
-.plus-button {
-  top: 1px;
-  width: 28px;
-  height: 28px;
-  background-image: url("Group 3.svg");
-  background-color: rgba(255, 255, 255, 0);
-  border: none;
+.ListEnd {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   position: absolute;
+  top: 523px;
+  left: 650px;
 }
 
-.todo-input-items {
-  top: 342px;
-  left: 110px;
-  position: absolute;
-}
-
-/* + 의 위치 */
-/* .component-2 {
-  height: 45px;
-  top: 195px;
-  left: 0;
-  position: absolute;
-  width: 396px;
+/* .listTodo::marker {
+  border: 1px solid var(--, #b31f25);
+  content: "□  ";
+  font-size: 40px;
+  color: #b31f25;
+  align-items: center;
+  font-family: none;
 } */
 
-.add-todo {
-  top: 0px;
-  position: absolute;
+.square {
+  width: 33px;
+  height: 33px;
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid #b31f25;
+  position: relative;
+  margin-right: 15px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.listTodo {
+  position: relative;
+  left: -308px;
+  top: -130px;
+  list-style-type: none;
+  /* display: none; */
+}
+
+.listFlex {
+  display: flex;
+  align-items: center;
+}
+
+.text {
+  font-size: 24px;
+  color: #b31f25;
+  font-family: pretendard;
+  font-weight: 200;
+  padding-top: 25px;
+}
+
+.lineTodo {
+  height: 1px;
   width: 396px;
-  display: none;
+  background-color: #b31f25;
+  margin-top: 10px;
+  margin-left: 0px;
+  position: absolute;
+}
+
+.lineTodo-input {
+  height: 1px;
+  width: 396px;
+  background-color: #b31f25;
+  margin-top: 15px;
+  margin-left: 0px;
+  position: absolute;
+}
+
+.lineDone {
+  height: 1px;
+  width: 396px;
+  background-color: #b31f25;
+  margin-top: 15px;
+  margin-left: -45px;
+  position: absolute;
+}
+
+.listDone {
+  position: relative;
+  left: 135px;
+  top: -173px;
+  margin-top: 7px;
+  list-style-type: none;
+}
+
+/* .listDone::marker {
+  content: "■  ";
+  font-size: 40px;
+  color: #b31f25;
+  list-style-position: outside;
+  align-items: center;
+  font-family: none;
+} */
+
+.listDone::before {
+  content: "";
+  position: absolute;
+  left: -45px;
+  top: 22px;
+  width: 35px; /* 첫 번째 이미지의 크기 */
+  height: 35px; /* 첫 번째 이미지의 크기 */
+  background-image: url("redRectangle.svg");
+  background-size: cover;
+}
+
+.listDone::after {
+  content: "";
+  position: absolute;
+  left: -39px; /* 두 번째 이미지의 위치 조정 */
+  top: 28px;
+  width: 24px; /* 두 번째 이미지의 크기 */
+  height: 24px; /* 두 번째 이미지의 크기 */
+  background-image: url("check.svg");
+  background-size: cover;
 }
 
 .todo-input {
   background-color: rgba(255, 255, 255, 0);
   border: none;
+  color: #949494;
+  font-size: 24px;
+  font-family: pretendard;
+  font-weight: 200;
+  padding-top: 27px;
+  margin-left: 45px;
 }
 
 .todo-input:focus {
   outline: none;
-}
-
-.line-3 {
-  top: 44px;
-  left: 0;
-  position: absolute;
-  width: 396px;
-  height: 1px;
-  object-fit: cover;
-}
-
-.rectangle {
-  position: absolute;
-  width: 28px;
-  height: 28px;
-  top: 1px;
-  left: 0;
-  border: 1px solid;
-  border-color: #b31f25;
-}
-
-.text-wrapper-7 {
-  position: absolute;
-  top: -1px;
-  left: 48px;
-  font-family: var(---font-family);
-  font-weight: var(---font-weight);
   color: #b31f25;
-  font-size: var(---font-size);
-  letter-spacing: var(---letter-spacing);
-  line-height: var(---line-height);
-  font-style: var(---font-style);
 }
 
-.component-4 {
-  height: 45px;
-  top: 342px;
-  left: 110px;
+.plus-button img {
+  transition: transform 0.5s;
+  transform: rotate(-45deg);
   position: absolute;
-  width: 396px;
-  display: none;
+  left: -1px;
+  top: -1px;
+  width: 33px;
+  height: 33px;
 }
 
-.component-45 {
-  height: 45px;
-  top: 342px;
-  left: 110px;
+/* .plus-button:hover img {
+  transform: rotate(0deg);
+} */
+
+.plus-button {
+  width: 33px;
+  height: 33px;
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid #b31f25;
   position: absolute;
-  width: 396px;
+  top: 25px;
+  margin-right: 10px;
+  left: 0px;
 }
 
-.component-5 {
-  height: 45px;
-  top: 400px;
-  left: 110px;
+.listTodo .todo-input,
+.listTodo .lineTodo-input {
+  visibility: hidden;
+}
+
+.del-button {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
   position: absolute;
-  width: 396px;
-  display: none;
-}
-
-.component-wrapper {
-  height: 45px;
-  top: 342px;
-  left: 713px;
-  position: absolute;
-  width: 396px;
-}
-
-.component-6 {
-  position: relative;
-  height: 45px;
-}
-
-.vector-wrapper {
-  position: absolute;
-  width: 28px;
-  height: 28px;
-  top: 1px;
-  left: 0;
-  background-color: #b31f25;
-}
-
-.vector-2 {
-  position: absolute;
-  width: 19px;
-  height: 21px;
-  top: 4px;
-  left: 4px;
-}
-
-.overlap-group-wrapper {
-  position: absolute;
-  width: 28px;
-  height: 28px;
-  top: 1px;
-  left: 368px;
-}
-
-.overlap-group-2 {
-  position: relative;
-  height: 28px;
-  border-radius: 14px;
-}
-
-.vector-3 {
-  position: absolute;
-  width: 18px;
-  height: 2px;
-  top: 13px;
-  left: 5px;
-}
-
-.group-2 {
-  position: absolute;
-  width: 28px;
-  height: 28px;
-  top: 0;
-  left: 0;
-  border-radius: 14px;
-  border: 1px solid;
-  border-color: var(--variable-collection);
-}
-
-* {
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
-html,
-body {
-  margin: 0px;
-  height: 100%;
-}
-/* a blue color as a generic focus style */
-button:focus-visible {
-  outline: 2px solid #4a90e2 !important;
-  outline: -webkit-focus-ring-color auto 5px !important;
-}
-a {
-  text-decoration: none;
+  left: 318px;
 }
 
 @font-face {
@@ -351,12 +289,4 @@ a {
   src: url("Teachers Students-Regular.otf");
 }
 
-:root {
-  ---font-family: "Pretendard", Helvetica;
-  ---font-weight: 200;
-  ---font-size: 24px;
-  ---letter-spacing: 0px;
-  ---line-height: normal;
-  ---font-style: normal;
-  --variable-collection: rgba(179, 31, 37, 1);
-}
+@import url("https://fonts.googleapis.com/css2?family=Lemon&family=Noto+Sans+KR:wght@100..900&display=swap");

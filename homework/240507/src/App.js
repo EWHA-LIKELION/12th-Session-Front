@@ -48,7 +48,7 @@ function App() {
   //trackData.find를 활용해서 선택한 사용자 ID와 list의 id가 일치하는 item을 찾습니다.
   //그리고 그 item.name이 선택되기 위한 코드를 작성해봅시다! (map 함수 도는 방식과 유사함)
   //hint✉️ : trackData.find((lion) => ~~~조건문 들어가는 자리~~ )?.name || "";
-
+  const [nth, setNth] = useState("");
   // 트랙 선택을 위한 함수
   const selectTrack = (selectedTrack) => {
     setTrack(selectedTrack);
@@ -63,6 +63,13 @@ function App() {
         <Title>
           <p className="h1">react1 homework</p>
           <p className="h2">🫳아기사자를 응원해요🫳</p>
+          <input
+            className="nth"
+            type="text"
+            value={nth}
+            onChange={(e) => setNth(e.target.value)}
+            placeholder=" 기수를 입력해주세요."
+          />
           <div className="Line"></div>
         </Title>
 
@@ -84,14 +91,20 @@ function App() {
           </div>
         </TrackOption>
 
-        <OpenBtn onClick={() => setModal(true)}>모달 만들기</OpenBtn>
+        <OpenBtn
+          onClick={() =>
+            track === "" ? alert("트랙을 선택해주세요.") : setModal(true)
+          }
+        >
+          모달 만들기
+        </OpenBtn>
         {modal && (
           <Modal
             setModal={setModal}
-            track={track}
             dataList={BabyLionList[track]}
             selectedLionId={selectedLionId}
             setSelectedlionId={setSelectedlionId}
+            track={track}
             //dataList를 여기서 props로 전달해서 보내주는 것으로 수정했습니다!
             //그리고 Modal에서 사용자를 선택하기 위해
             //1. 사용자 ID와 2. 이를 선택할 수 있는 함수를 props로 보내줍시다.
@@ -99,7 +112,7 @@ function App() {
         )}
       </BackgroundModal>
       <Cheering>
-        {track} {selectedLionName} 아가사자를 응원합니다!
+        {nth} {track} {selectedLionName} 아가사자를 응원합니다!
       </Cheering>
     </Wrapper>
   );
@@ -160,6 +173,16 @@ const Title = styled.div`
     font-weight: 600;
     font-size: 2rem;
     margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .nth {
+    font-family: pretendard;
+    border: 1px solid #81a7d3;
+    margin-bottom: 20px;
+    width: 120px;
+    height: 20px;
+    color: #81a7d3;
+    border-radius: 20px;
   }
 `;
 
@@ -196,6 +219,7 @@ const TrackBtn = styled.button`
   height: 100px;
   background-color: transparent;
   border: none;
+  font-family: "Pretendard";
 `;
 
 const OpenBtn = styled.button`
