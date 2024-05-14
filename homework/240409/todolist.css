@@ -1,0 +1,341 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 107px;
+  display: flex;
+  background-color: #f3ece4;
+  justify-content: space-between;
+  align-items: center;
+  height: 107px;
+  flex-shrink: 0;
+  padding-left: 48px;
+  padding-right: 48px;
+
+  background-image: url(./header.png);
+  background-size: 100%;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+@font-face {
+  font-family: Sokcho Bada Calligraphy;
+  src: url("SokchoBadaCalligraphy.ttf");
+}
+header .title {
+  color: #000;
+  font-family: "Sokcho Bada Calligraphy";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+header .profileicon {
+  margin-right: 40px;
+}
+
+header .moreicon {
+  margin-bottom: 7px;
+}
+
+body {
+  background-color: #f3ece4;
+}
+
+div {
+  margin-top: 68px;
+  display: grid;
+  grid-template-columns: 1fr 0fr 1fr;
+}
+
+div .monthly {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div .monthly .title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #000;
+  font-family: "Zen Tokyo Zoo";
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+div .monthly img {
+  margin-top: 40px;
+  width: 637px;
+  height: 673px;
+}
+
+div .line {
+  width: 1px;
+  height: 914.009px;
+  background: #e8dccc;
+  margin-top: 20px;
+}
+
+div .todolist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div .todolist .title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #000;
+  font-family: "Zen Tokyo Zoo";
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+div .todolist .container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  width: 637px;
+  height: 673px;
+  flex-shrink: 0;
+
+  border-radius: 10px;
+  border: 1px solid #e8dccc;
+}
+
+div .todolist .container .date {
+  display: flex;
+  width: 147px;
+  height: 43px;
+  flex-direction: column;
+  flex-shrink: 0;
+
+  color: #000;
+  text-align: center;
+  font-family: "Sokcho Bada Calligraphy";
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 0px;
+}
+
+div .todolist .subtitle {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 231px;
+  margin-top: -38px;
+}
+
+div .todolist .memo {
+  margin-left: 42px;
+  margin-top: -111px;
+}
+
+div .secondcontainer {
+  display: flex;
+  flex-direction: column;
+  padding-left: 47px;
+  margin-top: -230px;
+}
+
+div .todo-input {
+  padding: 0px;
+}
+
+div .secondcontainer .todo-input-items {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+div .popup-button {
+  margin-left: 5px;
+}
+
+div .secondcontainer h3 {
+  color: #000;
+  font-family: "Sokcho Bada Calligraphy";
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+  margin-right: 20px;
+}
+
+div .secondcontainer .todo-input-items button {
+  border: none;
+  width: 29px;
+  height: 29px;
+  flex-shrink: 0;
+  border-color: #f3ece4;
+  cursor: pointer;
+  padding: 0px;
+  margin-right: 13px;
+}
+
+@font-face {
+  font-family: SCDream;
+  src: url("SCDream4.otf");
+}
+
+div .secondcontainer .todo-input-items input {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  border-radius: 5px;
+  background: var(--Ivory, #fbf8f1);
+  width: 494px;
+  height: 35px;
+
+  color: #c1b6a4;
+  font-family: "SCDream";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  padding-left: 12px;
+  white-space: normal;
+}
+
+div .secondcontainer .todo-form {
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px; /* 수평으로 정렬되도록 변경 */
+}
+
+div .center-contents ul {
+  list-style: none;
+  padding: 0px;
+  height: 160px;
+  overflow-x: auto;
+  margin: 0; /*4개 넘어가면 스크롤 생성 */
+}
+
+ul::-webkit-scrollbar {
+  display: none; /*스크롤 기능은 있지만 화면에는 안 보기에 설정*/
+}
+
+div .center-contents li {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px;
+}
+
+div .center-contents {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0px;
+}
+
+.todo-inputtext {
+  border: none;
+  border-radius: 5px;
+  background: var(--Ivory, #fbf8f1);
+  width: 494px;
+  height: 35px;
+
+  color: #c1b6a4;
+  font-family: "SCDream";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  padding-left: 12px;
+  margin-top: 0px;
+  display: flex;
+  align-items: center;
+}
+
+.todo-list button {
+  border: none;
+  padding: 0px;
+  height: 35px;
+  flex-shrink: 0;
+  cursor: pointer;
+  margin-right: 9px;
+}
+
+.todoDel {
+  display: flex;
+  align-items: center;
+  margin-left: -30px;
+}
+
+div .bottom-contents {
+  margin-top: 26px;
+}
+
+div .bottom-contents ul {
+  list-style: none;
+  padding: 0px;
+  height: 190px;
+  overflow-x: auto; /*4개 넘어가면 스크롤 생성 */
+}
+
+ul::-webkit-scrollbar {
+  display: none; /*스크롤 기능은 있지만 화면에는 안 보기에 설정*/
+}
+
+div .bottom-contents li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+div .bottom-contents {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.done-inputtext {
+  border: none;
+  border-radius: 5px;
+  background: var(--Ivory, #fbf8f1);
+  width: 494px;
+  height: 35px;
+
+  color: #c1b6a4;
+  font-family: "SCDream";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  padding-left: 12px;
+  margin-top: 0px;
+  display: flex;
+  align-items: center;
+}
+
+.todoDel {
+  display: flex;
+  align-items: center;
+  margin-left: -30px;
+}
+
+.done-list button {
+  border: none;
+  padding: 0px;
+  height: 35px;
+  flex-shrink: 0;
+  cursor: pointer;
+  margin-right: 9px;
+}
+
+.doneDel {
+  display: flex;
+  align-items: center;
+  margin-left: -30px;
+}
