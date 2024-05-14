@@ -47,7 +47,6 @@ function App() {
     trackData.find((lion) => lion.id === selectedLionId)?.name || "";
   //trackData.find를 활용해서 선택한 사용자 ID와 list의 id가 일치하는 item을 찾습니다.
   //그리고 그 item.name이 선택되기 위한 코드를 작성해봅시다! (map 함수 도는 방식과 유사함)
-  //hint✉️ : trackData.find((lion) => ~~~조건문 들어가는 자리~~ )?.name || "";
 
   // 트랙 선택을 위한 함수
   const selectTrack = (selectedTrack) => {
