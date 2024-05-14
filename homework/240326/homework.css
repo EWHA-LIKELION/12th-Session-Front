@@ -1,0 +1,209 @@
+
+.header {
+    position: sticky;
+    top: 0;
+    background-color: #df9aca;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    margin-top: 12px;
+}
+
+.icon-container {
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 700px;
+    margin-left: 50px;
+}
+
+
+.player {
+    margin-top: 30px;
+    margin-left: 15px;
+}
+
+.left .info {
+    margin: 10px;
+    margin-top: 20px;
+}
+
+.info .rightBlock {
+    margin: 10px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.hashtags {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 0px;
+    font-size: 15px;
+    color: blue;
+}
+
+.info .rightBlock .hashtags li{
+    margin-right: 12px;
+}
+
+.info .title {
+    font-size: 22px;
+    margin-left: 25px;
+}
+
+.info .views {
+    font-size: 18px;
+    color: #616161;
+    margin-left: 25px;
+}
+
+.info .touchs {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    margin-right:800px;
+    margin-left: 30px;
+}
+
+.info hr {
+    margin: 0; 
+    border: none; 
+    border-top: 1px solid black; 
+    width: 1000px; 
+}
+
+.info .channel {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px  #616161;
+    border-bottom: 1px  #616161;
+}
+
+.info .channel .metadata {
+    display: flex;
+    align-items: center;
+}
+
+.info .channel .metadata .info {
+    display: flex;
+    flex-direction: column;
+}
+
+.fa-user {
+    margin-right: 12px;
+    border-radius: 50%;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    margin-left: 30px;
+    font-size: 60px;
+
+}
+
+.info .channel .metadata .channelName {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.info .channel .subscribers {
+    color: #616161;
+    font-size: 16px;
+}
+
+.info .channel .metadata .subscribe {
+    color: blue;
+    font-size: 18px;
+}
+
+.comments {
+    margin-right: 800px;
+}
+
+.comment {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.comments .user {
+    margin-top: 12px;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.commentDetail{
+    margin-left: 10px;
+
+}
+.followingComments {
+    font-size: 14px;
+    color: #616161;
+    margin-left: 10px;
+}
+
+.more {
+    margin-left: 8px;
+    font-weight: bold;
+}
+
+.right {
+    position: absolute; 
+    top: 0; 
+    right: 0; 
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-right: 20px;
+    margin-left: 1000px;
+}
+
+.right .recommended {
+    font-size: 18px;
+    font-weight: bold;
+    color: #616161;
+    margin-left: 50px;
+    margin-bottom: 6px;
+    margin-top: 50px;
+}
+
+.right .videos {
+    display: flex;
+    margin-top: 12px;
+    margin-left: 6px;
+    margin-right: 8px;
+}
+
+
+.right .videos .info .title {
+    margin-left: 6px;
+    font-size: 20px;
+}
+
+.right .videos .info {
+    display: flex;
+    flex-direction: column;
+}
+
+.right .videos .info .name,
+.right .videos .info .views {
+    margin-left: 25px;
+    font-size: 14px;
+    color: #616161;
+    margin-left: 6px;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+}
+
+
+@media screen and (min-width: 768px) {
+    .all {
+        display: flex;
+        flex-direction: row;
+        margin: var(--padding) 0;
+        margin: calc(3*(var(--padding)));
+        margin-top:0;
+    
+    }
