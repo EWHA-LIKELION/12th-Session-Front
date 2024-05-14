@@ -1,0 +1,289 @@
+body {
+  background-color: #ebddae;
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "title things"
+    "calendar done";
+  justify-content: center;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#Title {
+  grid-area: title;
+  width: fit-content;
+  margin: 86px 75px 195px 75px;
+}
+
+.MY {
+  color: var(--black, #222);
+  font-family: "Work Sans";
+  font-size: 128px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  margin: 0;
+  width: fit-content;
+}
+
+.DD {
+  color: var(--black, #222);
+  font-family: "Work Sans";
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  margin: 0;
+  width: fit-content;
+}
+
+#Calendar {
+  grid-area: calendar;
+  margin: 0 51px 71px 51px;
+  width: fit-content;
+}
+
+#Things_to_do {
+  grid-area: things;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 117px 90px 28px 0;
+  min-height: 365px;
+}
+
+.TTD {
+  color: var(--black, #222);
+  font-family: "Work Sans";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  margin-bottom: 31px;
+  margin-right: 552px;
+  cursor: pointer;
+}
+
+.write {
+  display: none;
+  flex-direction: row;
+  align-items: center;
+}
+
+#square {
+  width: 60px;
+  height: 100%;
+  border: 2px solid var(--green, #258b0b);
+  background: var(--white, #ebebeb);
+}
+
+#textarea {
+  margin: 0;
+  border: 2px solid var(--green, #258b0b);
+  border-left: none;
+  background: var(--white, #ebebeb);
+  color: var(--black, #222);
+  font-family: "Noto Sans KR";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  padding: 14px;
+  inline-size: 613px;
+  resize: none;
+  outline: none;
+  position: relative;
+}
+
+/* 텍스트 엘리먼트면서 텍스트가 아직 입력되지 않은 상태일 때, placeholder 노출 */
+[contenteditable="true"]:empty:before {
+  content: attr(placeholder);
+  color: grey;
+}
+
+#textarea::-webkit-scrollbar {
+  display: none;
+}
+
+.plus-button {
+  margin-left: 25px;
+  margin-right: 23px;
+}
+
+#Done {
+  grid-area: done;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.D {
+  color: var(--black, #222);
+  font-family: "Work Sans";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  margin-bottom: 31px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto; /* 일정 길이를 넘어가면 스크롤바 생성 */
+}
+
+.ttd-list {
+  height: 236px; /* 길이 지정 */
+}
+
+.d-list {
+  height: 297px; /* 길이 지정 */
+}
+
+ul::-webkit-scrollbar {
+  /* ul 스크롤바 스타일 지정 */
+  width: 10px;
+}
+
+ul::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #d6c795;
+}
+
+ul::-webkit-scrollbar-thumb:hover {
+  background: #258b0b; /* 움직이는 스크롤바에 마우스를 올렸을때의 배경색깔 */
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+li {
+  display: flex;
+  align-items: center;
+}
+
+.deleteBtn {
+  background: url("images/frame-6.png") no-repeat;
+  border: none;
+  width: 22px;
+  height: 22px;
+  cursor: pointer; /* 커서 포인터로 변환 */
+  margin-left: 28px;
+  margin-right: 25px;
+}
+
+.doneBtn {
+  width: 58px;
+  border: 2px solid var(--green, #258b0b);
+  background: var(--white, #ebebeb);
+  border-right: none;
+  border-top: none;
+  cursor: pointer;
+  color: transparent;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.doBox {
+  width: 615px;
+  height: auto;
+  gap: 8px;
+  border: 2px solid var(--green, #258b0b);
+  border-top: 0px;
+  background: var(--white, #ebebeb);
+  color: var(--black, #222);
+  font-family: "Noto Sans KR";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 14px;
+  white-space: normal; /* 영어도 한글처럼 정해진 width를 초과하면 밑으로 길어지도록.  */
+  overflow-wrap: break-word; /* 영어도 한글처럼 정해진 width를 초과하면 밑으로 길어지도록.  */
+}
+
+.doneBox {
+  width: 615px;
+  height: auto;
+  gap: 8px;
+  border: 2px solid var(--green, #258b0b);
+  background: transparent;
+  color: var(--black, #222);
+  font-family: "Noto Sans KR";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 14px;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+.d-list li:first-child .doneBox {
+  border-top: 2px solid var(--green, #258b0b); /* 리스트의 첫 번째 항목은 윗테두리가 있어야 함 */
+}
+
+.d-list li:not(:first-child) .doneBox {
+  border-top: none; /* 두 번째 항목부터는 윗테두리가 있을 경우 위 항목의 아래 테두리와 겹쳐 두꺼워지므로 없앰 */
+}
+
+.reBtn {
+  width: 58px;
+  border: 2px solid var(--green, #258b0b);
+  background: transparent;
+  border-right: none;
+  cursor: pointer;
+  color: transparent;
+  overflow: hidden;
+  background: url("images/ellipse-1.png") no-repeat;
+  background-position: center;
+  white-space: nowrap;
+  overflow: hidden;
+  background-size: 20px;
+}
+
+.d-list li:first-child .reBtn {
+  border-top: 2px solid var(--green, #258b0b);
+}
+
+.d-list li:not(:first-child) .reBtn {
+  border-top: none;
+}
+
+@media (max-width: 1400px) {
+  /* 가로가 1400px 밑으로 줄어들 경우, div가 세로로만 나열되는 반응형 */
+  body {
+    grid-template-columns: 1fr; /* 모든 컬럼을 하나로 합치기 */
+    grid-template-rows: auto auto auto auto; /* 필요한 만큼 행 추가 */
+    grid-template-areas:
+      "title"
+      "calendar"
+      "things"
+      "done";
+  }
+
+  #Title {
+    margin: 100px;
+    padding: 0px;
+  }
+
+  #Calendar {
+    margin: 0px 85px 85px 75px;
+    padding: 0px;
+  }
+
+  #Things_to_do,
+  #Done {
+    margin: 30px 120px;
+  }
+}
