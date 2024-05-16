@@ -69,20 +69,23 @@ const printTodoItem = (text) => {
 
 // 할 일 삭제 함수
 const deleteTodoItem = (e) => {
-  const target = e.target.grandparentNode;
-  document.querySelector(".todo-list").removeChild(target);
+  const target = e.target.parentNode.parentNode;
+  document.querySelector(".List").removeChild(target);
 };
 
 // 할 일 -> 끝낸 일 이동 함수
 const toggleTodoToDone = (e) => {
+  const todoText = e.target.parentNode.querySelector("span").innerText;
   deleteTodoItem(e);
-  printDoneItem(e.target.innerText);
+  printDoneItem(todoText);
 };
 
 // 끝낸 일 출력 함수
 const printDoneItem = (text) => {
   const doneItem = document.createElement("li");
+  const doneFlex = document.createElement("div");
   const doneText = document.createElement("span");
+  const doneTodo = document.createElement("button");
   const doneDel = document.createElement("button");
   const doneImg = document.createElement("img");
   const doneLine = document.createElement("div");
@@ -90,20 +93,24 @@ const printDoneItem = (text) => {
   //스타일 추가
   doneItem.classList.add("text");
   doneItem.classList.add("listDone");
-  doneImg.src.add("-.svg");
-  doneEnd.classList.add("del-button");
+  doneFlex.classList.add("listFlex");
+  doneTodo.classList.add("listDoneBtn");
+  doneImg.src = "-.svg";
+  doneDel.classList.add("del-button");
   doneLine.classList.add("lineDone");
 
   // [끝낸 일 내용]
   doneText.innerText = text;
-  doneText.addEventListener("click", toggleDoneToDo);
+  doneTodo.addEventListener("click", toggleDoneToDo);
 
   // [끝낸 일 삭제 버튼]
   doneDel.addEventListener("click", deleteDoneItem);
 
   // [생성한 요소들 연결]
-  doneItem.appendChild(doneText);
-  doneItem.appendChild(doneDel);
+  doneItem.appendChild(doneFlex);
+  doneFlex.appendChild(doneText);
+  doneFlex.appendChild(doneTodo);
+  doneTodo.appendChild(doneDel);
   doneDel.appendChild(doneImg);
   doneItem.appendChild(doneLine);
   document.querySelector(".ListEnd").appendChild(doneItem);
@@ -111,14 +118,16 @@ const printDoneItem = (text) => {
 
 // 끝낸 일 삭제 함수
 const deleteDoneItem = (e) => {
-  const target = e.target.parentNode;
+  const target = e.target.parentNode.parentNode.parentNode;
   document.querySelector(".ListEnd").removeChild(target);
 };
 
 // 끝낸 일 -> 할 일 이동 함수
 const toggleDoneToDo = (e) => {
+  const doneText =
+    e.target.parentNode.parentNode.querySelector("span").innerText;
   deleteDoneItem(e);
-  printTodoItem(e.target.innerText);
+  printTodoItem(doneText);
 };
 
 // 시작 함수

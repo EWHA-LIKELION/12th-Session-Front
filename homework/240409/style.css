@@ -193,16 +193,12 @@
   list-style-type: none;
 }
 
-/* .listDone::marker {
-  content: "■  ";
-  font-size: 40px;
-  color: #b31f25;
-  list-style-position: outside;
-  align-items: center;
-  font-family: none;
-} */
+.listDoneBtn {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+}
 
-.listDone::before {
+.listDoneBtn::before {
   content: "";
   position: absolute;
   left: -45px;
@@ -213,7 +209,7 @@
   background-size: cover;
 }
 
-.listDone::after {
+.listDoneBtn::after {
   content: "";
   position: absolute;
   left: -39px; /* 두 번째 이미지의 위치 조정 */
@@ -274,6 +270,7 @@
   background-color: rgba(255, 255, 255, 0);
   border: none;
   position: absolute;
+  top: 25px;
   left: 318px;
 }
 
