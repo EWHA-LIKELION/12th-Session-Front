@@ -20,13 +20,17 @@
     <script>
       document.querySelector("#makeBtn").addEventListener("click", function () {
         // 1. 새로운 동적 element를 만들고, 그 값을 p에 담기
-      let p1 = document.createElement('p') /*p 속성을 만들고 싶어서 이렇게 쓴 것임*/
+        let p1 =
+          document.createElement("p"); /*p 속성을 만들고 싶어서 이렇게 쓴 것임*/
         // 2. 만든 p element에 class 속성 추가하기
-      p1.setAttribute("class","my-class") /*class 속성을 만들고 클래스 이름을 한 것임 */
+        p1.setAttribute(
+          "class",
+          "my-class"
+        ); /*class 속성을 만들고 클래스 이름을 한 것임 */
         // 3. 만든 p element에 innerText 추가하기
-      p1.innerText = "내가 잘 하고 있는 것일까..."
+        p1.innerText = "내가 잘 하고 있는 것일까...";
         // 4. 만든 p element를 id가 one인 요소(div)의 자식 요소로 추가하기
-      document.querySelector("#one").append(p1)
+        document.querySelector("#one").append(p1);
       });
     </script>
   </body>
