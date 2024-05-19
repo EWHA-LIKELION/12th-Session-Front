@@ -4,9 +4,11 @@ import styled from "styled-components";
 const Name = ({ name, nth, isFE }) => {
   return (
     <>
-      <Wrapper isFE={isFE}>
-        {nth}기 프론트엔드 {name}입니다.
-      </Wrapper>
+      {isFE ? (
+        <div>
+          {nth}기 프론트엔드 {name}입니다.
+        </div>
+      ) : null}
     </>
   );
 };
