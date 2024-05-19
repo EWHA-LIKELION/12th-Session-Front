@@ -1,21 +1,18 @@
 import React from "react";
+import styled from "styled-components";
 
 const Name = ({ name, nth, isFE }) => {
-  const style = {
-    backgroundColor: "black",
-    color: "orange",
-  };
   return (
     <>
-      {isFE ? (
-        <div style={style}>
-          {nth}기 프론트엔드 {name}입니다.
-        </div>
-      ) : null}
+      <Wrapper isFE={isFE}>
+        {nth}기 프론트엔드 {name}입니다.
+      </Wrapper>
     </>
   );
 };
-Name.defaultProps = {
-  name: "변지혜",
-};
 export default Name;
+
+const Wrapper = styled.div`
+  background-color: black;
+  color: ${({ isFE }) => (isFE ? "orange" : "green")};
+`;
