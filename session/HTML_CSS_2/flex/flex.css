@@ -5,25 +5,18 @@
 .container2 {
   height: 200px;
   display: flex;
-  /* 1번 문제, 아래에 코드를 추가하세요 
-  디폴트 디렉션은 row*/
-  justify-content: space-between;
-  align-items: flex-end;
+  /* 1번 문제, 아래에 코드를 추가하세요 */
 }
 .container3 {
   height: 200px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
   /* 2번 문제, 아래에 코드를 추가하세요 */
 }
 .container4 {
   height: 200px;
   display: flex;
   /* 3번 문제, 아래에 코드를 추가하세요 */
-  justify-content: center;
-  align-items: center;
 }
 /* 아래는 수정 X */
 div {
