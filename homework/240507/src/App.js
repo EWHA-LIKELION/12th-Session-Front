@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 // components
 import Modal from "./components/Modal";
+import BabyLion from "./components/BabyLion";
 
 // images
 import designLogo from "./images/Figma.png";
@@ -90,6 +91,8 @@ function App() {
             setModal={setModal}
             track={track}
             dataList={BabyLionList[track]}
+            selectedLion={selectedLion}
+            setSelectedLion={setSelectedLion}
             //dataList를 여기서 props로 전달해서 보내주는 것으로 수정했습니다!
             //그리고 Modal에서 사용자를 선택하기 위해
             //1. 사용자 ID와 2. 이를 선택할 수 있는 함수를 props로 보내줍시다.

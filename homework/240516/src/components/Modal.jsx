@@ -1,7 +1,10 @@
 import styled from "styled-components";
 
 // props로 받아올 모달창 상태 변경 함수 구조 분해 할당
-const Modal = () => {
+const Modal = ({openModal, setModal}) => {
+  const toggleModal = () => { 
+    setModal(false);
+  };
   return (
     <Wrapper>
       {/* 배경을 클릭하면 모달창이 닫히도록 click 이벤트에 함수 바인딩 */}
