@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-
+import Modal from "../components/Modal";
 import TopBar from "../components/TopBar";
 
 const ModalPage = () => {
   //모달창의 열고 닫힌 상태를 관리하는 useState 선언
-
+  const [modal, setModal] = useState(false);
   // 모달창의 state를 바꾸는 함수 작성 (true <-> false)
+  const openModal = () => {
+    setModal(true);
+  };
 
   return (
     <Wrapper>
@@ -17,8 +20,9 @@ const ModalPage = () => {
         모달 내부를 클릭하면 닫히지 않습니다.
       </Text>
       {/* 모달창을 여는 버튼, 클릭하면 위에서 작성한 함수 호출 */}
-      <OpenBtn>모달 열기</OpenBtn>
+      <OpenBtn onClick={openModal}>모달 열기</OpenBtn>
       {/* 모달창의 state에 따라 Modal 컴포넌트를 조건부 렌더링 */}
+      {modal ? <Modal setModal={setModal} /> : null}
       {/* Modal 컴포넌트에 모달 상태 변경 함수 props로 전달 */}
     </Wrapper>
   );
