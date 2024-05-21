@@ -55,11 +55,16 @@ const CreatePage = ({posts, setPosts}) => {
   // 내용 입력창에 submit 이벤트 발생 시 바인딩할 함수 정의
   const onSubmit = (e) => {
     e.preventDefault();
-    if (!content) alert("내용을 입력해주세요.");
-    else {
+    if (!title) {
+      alert("제목을 입력해주세요.");
+      setNext(false);
+      firstInput.current.focus();
+    } else if (!content) {
+      alert("내용을 입력해주세요.");
+      secondInput.current.focus();
+    } else {
       setNext(false);
       // App.js에서 정의했던 게시글 배열에 새로운 게시글 추가
-      // (힌트 : 스프레드 문법, 프로퍼티 축약 표현)
       setPosts([...posts, newPost]);
       // 홈 화면으로 이동
       navigate("/");
