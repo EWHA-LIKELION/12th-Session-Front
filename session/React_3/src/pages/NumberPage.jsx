@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 import { useTheme } from "../assets/context/ThemeContext";
+import useStore from "../assets/zustand/numberStore";
 
 import Header from "../components/Header";
 
@@ -11,16 +12,23 @@ const NumberPage = () => {
   const navigate = useNavigate();
   const { isDark } = useTheme();
 
+  const count = useStore((state) => state.count);
+  const { increment, decrement, reset } = useStore((state) => ({
+    increment: state.increment,
+    decrement: state.decrement,
+    reset: state.reset,
+  }));
+
   return (
     <Wrapper isDark={isDark}>
       <ContentContainer isDark={isDark}>
         <Header />
         <div className="contents">
-          <div>기수 : </div>
+          <div>기수 : {count}</div>
           <div className="btnBox">
-            <button>-1</button>
-            <button>+1</button>
-            <button>초기화</button>
+            <button onClick={decrement}>-1</button>
+            <button onClick={increment}>+1</button>
+            <button onClick={reset}>초기화</button>
           </div>
           <Button onClick={() => navigate("/")} isDark={isDark}>
             홈으로
