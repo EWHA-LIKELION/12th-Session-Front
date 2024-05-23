@@ -2,8 +2,8 @@ import { RecoilRoot } from "recoil";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./assets/redux/redux";
-
 import { ThemeProvider } from "./assets/context/ThemeContext";
+import { RecoilRoot } from "recoil";
 
 import MainPage from "./pages/MainPage";
 import PartPage from "./pages/PartPage";
@@ -17,6 +17,7 @@ function App() {
       <Provider store={store}>
         <ThemeProvider>
           <RecoilRoot>
+<<<<<<< HEAD
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<MainPage />} />
@@ -26,6 +27,17 @@ function App() {
               <Route path="/zustand" element={<NumberPage />} />
             </Routes>
           </BrowserRouter>
+=======
+            <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<MainPage />} />
+                <Route path="/redux" element={<PartPage />} />
+                <Route path="/contextAPI" element={<ThemePage />} />
+                <Route path="/recoil" element={<NamePage />} />
+                <Route path="/zustand" element={<NumberPage />} />
+              </Routes>
+            </BrowserRouter>
+>>>>>>> 63fe4a19aacac5d28846c56b58c2b5aff0750332
           </RecoilRoot>
         </ThemeProvider>
       </Provider>
