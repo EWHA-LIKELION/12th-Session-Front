@@ -1,3 +1,4 @@
+import { RecoilRoot } from "recoil";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./assets/redux/redux";
@@ -15,6 +16,7 @@ function App() {
     <>
       <Provider store={store}>
         <ThemeProvider>
+          <RecoilRoot>
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<MainPage />} />
@@ -24,6 +26,7 @@ function App() {
               <Route path="/zustand" element={<NumberPage />} />
             </Routes>
           </BrowserRouter>
+          </RecoilRoot>
         </ThemeProvider>
       </Provider>
     </>
