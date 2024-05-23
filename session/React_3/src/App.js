@@ -9,21 +9,24 @@ import PartPage from "./pages/PartPage";
 import ThemePage from "./pages/ThemePage";
 import NamePage from "./pages/NamePage";
 import NumberPage from "./pages/NumberPage";
+import { RecoilRoot } from "recoil";
 
 function App() {
   return (
     <>
       <Provider store={store}>
         <ThemeProvider>
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<MainPage />} />
-              <Route path="/redux" element={<PartPage />} />
-              <Route path="/contextAPI" element={<ThemePage />} />
-              <Route path="/recoil" element={<NamePage />} />
-              <Route path="/zustand" element={<NumberPage />} />
-            </Routes>
-          </BrowserRouter>
+          <RecoilRoot>
+            <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<MainPage />} />
+                <Route path="/redux" element={<PartPage />} />
+                <Route path="/contextAPI" element={<ThemePage />} />
+                <Route path="/recoil" element={<NamePage />} />
+                <Route path="/zustand" element={<NumberPage />} />
+              </Routes>
+            </BrowserRouter>
+          </RecoilRoot>
         </ThemeProvider>
       </Provider>
     </>
