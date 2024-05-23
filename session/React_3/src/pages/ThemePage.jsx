@@ -16,7 +16,7 @@ const ThemePage = () => {
         <Header />
         <div className="contents">
           <Button onClick={toggleTheme} isDark={isDark}>
-            다크 모드
+            핑크 모드
           </Button>
           <Button onClick={() => navigate("/")} isDark={isDark}>
             홈으로
@@ -29,7 +29,7 @@ const ThemePage = () => {
 export default ThemePage;
 
 const Wrapper = styled.div`
-  background-color: ${(props) => (props.isDark ? "black" : "lightgray")};
+  background-color: ${(props) => (props.isDark ? "#ffe5f9" : "#ccdaff")};
 
   width: 100%;
   height: 100vh;
@@ -43,7 +43,7 @@ const ContentContainer = styled.div`
   height: 40vh;
   border-radius: 20px;
   border: none;
-  background-color: ${(props) => (props.isDark ? "#969696" : "white")};
+  background-color: ${(props) => (props.isDark ? "#ffb3b3" : "white")};
 
   overflow: hidden;
 
@@ -65,7 +65,7 @@ const Button = styled.button`
   font-size: 24px;
   border-radius: 16px;
   border: none;
-  background-color: ${(props) => (props.isDark ? "#686868" : "#e4e4e4")};
+  background-color: ${(props) => (props.isDark ? "#ff2a86" : "#e4e4e4")};
   color: ${(props) => (props.isDark ? "white" : "black")};
 
   cursor: pointer;

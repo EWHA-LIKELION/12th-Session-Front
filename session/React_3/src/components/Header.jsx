@@ -4,13 +4,18 @@ import styled from "styled-components";
 import { useSelector } from "react-redux";
 import { useTheme } from "../assets/context/ThemeContext";
 
+import { useRecoilState } from "recoil";
+import { usernameState } from "../assets/recoil/nameRecoil";
+import useStore from "../assets/zustand/numberStore";
+
 const Header = () => {
   const selectedPart = useSelector((state) => state.part.selectedPart);
   const { isDark } = useTheme();
-
+  const [username, setUsername] = useRecoilState(usernameState);
+const count = useStore((state) => state.count);
   return (
     <Wrapper isDark={isDark}>
-      <div>11기 {selectedPart} 변지혜님 환영합니다.</div>
+      <div>{count}기 {selectedPart} {username}님 환영합니다.</div>
     </Wrapper>
   );
 };
