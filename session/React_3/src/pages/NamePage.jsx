@@ -3,6 +3,11 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 import { useTheme } from "../assets/context/ThemeContext";
+import { useRecoilState, useRecoilValue } from "recoil";
+import {
+  usernameState,
+  usernameLengthState,
+} from "../assets/recoil/nameRecoil";
 
 import Header from "../components/Header";
 
@@ -18,15 +23,27 @@ const NamePage = () => {
   const { isDark } = useTheme();
 
   const [username, setUsername] = useRecoilState(usernameState);
+<<<<<<< HEAD
 const usernameLength = useRecoilValue(usernameLengthState);
+=======
+  const usernameLength = useRecoilValue(usernameLengthState);
+
+>>>>>>> 63fe4a19aacac5d28846c56b58c2b5aff0750332
   return (
     <Wrapper isDark={isDark}>
       <ContentContainer isDark={isDark}>
         <Header />
         <div className="contents">
+<<<<<<< HEAD
           <div>이름 : {username} (Length: {usernameLength})</div>
+=======
+          <div>
+            Name: {username} (Length: {usernameLength})
+          </div>
+>>>>>>> 63fe4a19aacac5d28846c56b58c2b5aff0750332
           <input
             placeholder="이름을 입력하세요."
+            value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
           <Button onClick={() => navigate("/")} isDark={isDark}>

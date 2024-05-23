@@ -4,7 +4,7 @@ import { configureStore, createSlice } from "@reduxjs/toolkit";
 const partSlice = createSlice({
   name: "part",
   initialState: {
-    selectedPart: "프론트엔드",
+    selectedPart: "",
   },
   reducers: {
     setSelectedPart: (state, action) => {
@@ -22,6 +22,3 @@ const store = configureStore({
 });
 
 export default store;
-
-//원래는 state, action, reducer 모두 다른 파일에 각각 만들지만...
-//한 눈에 보려 이번에만 하나에 담았으니 참고해주세요!
