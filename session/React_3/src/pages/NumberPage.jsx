@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 import { useTheme } from "../assets/context/ThemeContext";
+import useStore from "../assets/zustand/numberStore";
 
 import Header from "../components/Header";
 
@@ -12,12 +13,20 @@ const NumberPage = () => {
   //zustand
   const navigate = useNavigate();
   const { isDark } = useTheme();
+<<<<<<< HEAD
+=======
+
+>>>>>>> 63fe4a19aacac5d28846c56b58c2b5aff0750332
   const count = useStore((state) => state.count);
   const { increment, decrement, reset } = useStore((state) => ({
     increment: state.increment,
     decrement: state.decrement,
     reset: state.reset,
   }));
+<<<<<<< HEAD
+=======
+
+>>>>>>> 63fe4a19aacac5d28846c56b58c2b5aff0750332
   return (
     <Wrapper isDark={isDark}>
       <ContentContainer isDark={isDark}>

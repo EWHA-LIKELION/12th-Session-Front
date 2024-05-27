@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./assets/redux/redux";
-
 import { ThemeProvider } from "./assets/context/ThemeContext";
+import { RecoilRoot } from "recoil";
 
 import MainPage from "./pages/MainPage";
 import PartPage from "./pages/PartPage";

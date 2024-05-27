@@ -3,6 +3,11 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 import { useTheme } from "../assets/context/ThemeContext";
+import { useRecoilState, useRecoilValue } from "recoil";
+import {
+  usernameState,
+  usernameLengthState,
+} from "../assets/recoil/nameRecoil";
 
 import Header from "../components/Header";
 import { useRecoilState, useRecoilValue } from "recoil";
@@ -25,10 +30,15 @@ const NamePage = () => {
         <Header />
         <div className="contents">
           <div>
+<<<<<<< HEAD
             이름 : {username} (Length: {usernameLength})
+=======
+            Name: {username} (Length: {usernameLength})
+>>>>>>> 63fe4a19aacac5d28846c56b58c2b5aff0750332
           </div>
           <input
             placeholder="이름을 입력하세요."
+            value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
           <Button onClick={() => navigate("/")} isDark={isDark}>

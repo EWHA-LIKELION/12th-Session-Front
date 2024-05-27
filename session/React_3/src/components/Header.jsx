@@ -6,12 +6,14 @@ import { useTheme } from "../assets/context/ThemeContext";
 import { useRecoilState } from "recoil";
 import { usernameState } from "../assets/recoil/nameRecoil";
 import useStore from "../assets/zustand/numberStore";
+import { useRecoilState } from "recoil";
+import { usernameState } from "../assets/recoil/nameRecoil";
+import useStore from "../assets/zustand/numberStore";
 
 const Header = () => {
   const [username, setUsername] = useRecoilState(usernameState);
   const selectedPart = useSelector((state) => state.part.selectedPart);
   const { isDark } = useTheme();
-  const count = useStore((state) => state.count);
 
   return (
     <Wrapper isDark={isDark}>
@@ -29,7 +31,6 @@ const Wrapper = styled.div`
   justify-content: flex-end;
   gap: 20px;
   padding: 10px;
-
   background-color: ${(props) => (props.isDark ? "#5e5e5e" : "#adadad")};
   font-family: Pretendard;
   color: white;
