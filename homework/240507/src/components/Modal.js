@@ -6,7 +6,7 @@ import React from "react";
 const Modal = ({
   setModal,
   track,
-  dataList,
+  dataList, selectedLion, setSelectedLionId
   //App.js에서 보내준 props를 구조분해 할당해줍니다!
 }) => {
   const { useState } = React;
