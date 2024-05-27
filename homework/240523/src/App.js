@@ -12,6 +12,7 @@ import TodoPage from "./pages/TodoPage";
 function App() {
   return (
     <>
+    <Provider store={store}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainPage />} />
@@ -19,6 +20,7 @@ function App() {
           <Route path="/todo-list" element={<TodoPage />} />
         </Routes>
       </BrowserRouter>
+    </Provider>
     </>
   );
 }
