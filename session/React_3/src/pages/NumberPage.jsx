@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { useTheme } from "../assets/context/ThemeContext";
+<<<<<<< HEAD
+=======
+import useStore from "../assets/zustand/numberStore";
+
+>>>>>>> 63fe4a19aacac5d28846c56b58c2b5aff0750332
 import Header from "../components/Header";
 import useStore from "../assets/zustand/numberStore";
 
@@ -16,12 +21,23 @@ const NumberPage = () => {
   const navigate = useNavigate();
   const { isDark } = useTheme();
 
+  const count = useStore((state) => state.count);
+  const { increment, decrement, reset } = useStore((state) => ({
+    increment: state.increment,
+    decrement: state.decrement,
+    reset: state.reset,
+  }));
+
   return (
     <Wrapper isDark={isDark}>
       <ContentContainer isDark={isDark}>
         <Header />
         <div className="contents">
+<<<<<<< HEAD
           <div>기수 :{count} </div>
+=======
+          <div>기수 : {count}</div>
+>>>>>>> 63fe4a19aacac5d28846c56b58c2b5aff0750332
           <div className="btnBox">
             <button onClick={decrement}>-1</button>
             <button onClick={increment}>+1</button>
