@@ -9,9 +9,6 @@ export const counterSlice = createSlice({
     value: 0,
   },
   reducers: {
-    //아래에 각각의 액션에 대한 업데이트 로직이 있는 reducer 함수를 정의내려줍니다.
-    //이때 함수들 각각에 대응하는 액션 생성자들이 자동으로 생성됩니다!
-    //➡️ +10, -10 리듀서 함수 (혹은 다른 수식)을 추가해봅시다!
     increment: (state) => {
       state.value += 1;
     },

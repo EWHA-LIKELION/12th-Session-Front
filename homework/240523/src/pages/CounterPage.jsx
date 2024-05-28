@@ -1,15 +1,21 @@
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+<<<<<<< HEAD
 
 import { useSelector, useDispatch } from "react-redux";
 import { increment, decrement, incrementTen, decrementTen, reset } from "../redux/counterSlice";
 //----------------------------------------------------
 //위 두 줄 주석 풀어주시면 됩니다.
 //redux 사용할 때 import 해와야 하는 값들 잊지 마세요‼️
+=======
+import { useSelector, useDispatch } from "react-redux";
+import { increment, decrement, reset } from "../redux/counterSlice";
+>>>>>>> a553386ee12a527c9e4e99a60e6de0bd6b474ea1
 
 const CounterPage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+<<<<<<< HEAD
   //----------------------------------------------------
   //윗줄 주석 풀어주세요!
   //navigate를 가져오는 것처럼, dispatch 역시 hook을 사용할 수 있도록 정의해줍니다.
@@ -20,10 +26,15 @@ const CounterPage = () => {
   //redux store에서는 selctor를 활용해 저장된 상태 값을 가져오는데요!
   //이 때 state의 ??의 ??에 접근해 가져와야 하는데, 어떻게 해야할까요?
   //hint ✉️ : session 폴더의 PartPage 코드를 참고해보세요
+=======
+
+  const count = useSelector((state) => state.counter.value);
+>>>>>>> a553386ee12a527c9e4e99a60e6de0bd6b474ea1
 
   return (
     <Wrapper>
       <ContentContainer>
+<<<<<<< HEAD
         {/* 아래 버튼들에 들어가있는 주석 처리 풀어주세요! (드래그하고 ctrl + /) */}
         {/* ---------------------------------------------------------------- */}
         {<button onClick={() => dispatch(increment())}>+</button>}
@@ -38,6 +49,14 @@ const CounterPage = () => {
       </ContentContainer>
       <ButtonContainer>
         {<Button onClick={() => dispatch(reset())}>Reset</Button>}
+=======
+        <button onClick={() => dispatch(increment())}>+</button>
+        <CountDisplay>{count}</CountDisplay>
+        <button onClick={() => dispatch(decrement())}>-</button>
+      </ContentContainer>
+      <ButtonContainer>
+        <Button onClick={() => dispatch(reset())}>Reset</Button>
+>>>>>>> a553386ee12a527c9e4e99a60e6de0bd6b474ea1
         <Button onClick={() => navigate("/")}>홈으로</Button>
       </ButtonContainer>
     </Wrapper>
