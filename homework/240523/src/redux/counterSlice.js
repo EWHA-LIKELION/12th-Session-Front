@@ -21,10 +21,17 @@ export const counterSlice = createSlice({
     reset: (state) => {
       state.value = 0;
     },
+    incrementTen: (state) => {
+      state.value += 10;
+    },
+    decrementTen: (state) => {
+      state.value -= 10;
+    },
   },
 });
 
-//export const {?? , ?? , ?? } = ??.??;
+export const { increment, decrement, reset, incrementTen, decrementTen } =
+  counterSlice.actions;
 //-------------------------------------------------------------------------
 //위에서 정의한 액션 생성자들을 export 해줄 때, 이걸 actons로 정의해주려 합니다!
 //그렇다면 어떤 코드를 써줘야 할까요? 위 형식에 맞춰서 써주세요 :)
