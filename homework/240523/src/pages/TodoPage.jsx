@@ -47,6 +47,10 @@ const Wrapper = styled.div`
   background-color: lightgray;
   gap: 20px;
 `;
+<<<<<<< HEAD
+=======
+
+>>>>>>> a553386ee12a527c9e4e99a60e6de0bd6b474ea1
 const Form = styled.form`
   display: flex;
   justify-content: space-between;
