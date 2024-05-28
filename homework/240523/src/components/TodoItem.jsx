@@ -8,8 +8,7 @@ const TodoItem = ({ todo }) => {
   return (
     <ItemContainer onClick={() => dispatch(toggleTodo(todo.id))}>
       <span className={todo.completed ? "completed" : ""}>
-        {todo.completed ? "✅" : "❤️"}
-        {todo.text}
+        {todo.completed ? "✅" : "🧡"} {todo.text}
       </span>
       <DeleteButton
         onClick={(e) => {
@@ -25,7 +24,7 @@ const TodoItem = ({ todo }) => {
 
 export default TodoItem;
 
-const ItemContain = styled.div`
+const ItemContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -54,7 +53,7 @@ const DeleteButton = styled.div`
   visibility: hidden;
   cursor: pointer;
 
-  ${ItemContainer}:hover& {
+  ${ItemContainer}:hover & {
     visibility: visible;
   }
 `;

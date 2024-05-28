@@ -6,14 +6,14 @@ const TodoList = () => {
   const todos = useSelector((state) => state.todos);
 
   const completedTodos = todos.filter((todo) => todo.completed);
-  const incompletedTodos = todos.filter((todo) => !todo.completed);
+  const incompleteTodos = todos.filter((todo) => !todo.completed);
 
-  const sortedTodos = [...incompletedTodos, ...completedTodos];
+  const sortedTodos = [...incompleteTodos, ...completedTodos];
 
   return (
     <ListContainer>
       {sortedTodos.map((todo) => (
-        <TodoItem key={todo.id} todo={todo}></TodoItem>
+        <TodoItem key={todo.id} todo={todo} />
       ))}
     </ListContainer>
   );

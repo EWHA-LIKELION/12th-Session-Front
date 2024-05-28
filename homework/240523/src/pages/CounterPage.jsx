@@ -12,6 +12,8 @@ import {
 //----------------------------------------------------
 //위 두 줄 주석 풀어주시면 됩니다.
 //redux 사용할 때 import 해와야 하는 값들 잊지 마세요‼️
+import { useSelector, useDispatch } from "react-redux";
+import { increment, decrement, reset } from "../redux/counterSlice";
 
 const CounterPage = () => {
   const navigate = useNavigate();
@@ -40,6 +42,9 @@ const CounterPage = () => {
         <CountDisplay>{count}</CountDisplay>
         <button onClick={() => dispatch(decrement())}>-1</button>
         <button onClick={() => dispatch(decrement1())}>-10</button>
+        <button onClick={() => dispatch(increment())}>+</button>
+        <CountDisplay>{count}</CountDisplay>
+        <button onClick={() => dispatch(decrement())}>-</button>
       </ContentContainer>
       <ButtonContainer>
         <Button onClick={() => dispatch(reset())}>Reset</Button>

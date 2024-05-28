@@ -8,9 +8,9 @@ const MainContents = () => {
   return (
     <Wrapper>
       <div>1. 파트 설정 : Redux 예제</div>
-      <div>1. 테마 설정 : Context API 예제</div>
-      <div>1. 이름 설정 : Recoil 예제</div>
-      <div>1. 기수 설정 : Zustand 예제</div>
+      <div>2. 테마 설정 : Context API 예제</div>
+      <div>3. 이름 설정 : Recoil 예제</div>
+      <div>4. 기수 설정 : Zustand 예제</div>
     </Wrapper>
   );
 };

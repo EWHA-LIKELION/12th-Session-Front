@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import React, { useState } from "react";
@@ -6,10 +7,14 @@ import { useDispatch } from "react-redux";
 import { addTodo } from "../redux/todoSlice";
 import TodoList from "../components/TodoList";
 
+import { useDispatch } from "react-redux";
+import { addTodo } from "../redux/todoSlice";
+import TodoList from "../components/TodoList";
+
 const TodoPage = () => {
   const navigate = useNavigate();
 
-  const [input, setInput] = useState();
+  const [input, setInput] = useState("");
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
@@ -26,11 +31,11 @@ const TodoPage = () => {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="할 일을 입력하세요..."
-        ></Input>
+        />
         <Button type="submit">추가</Button>
       </Form>
-      <TodoList></TodoList>
-      <HomeButton onclick={() => navigate("/")}>홈으로</HomeButton>
+      <TodoList />
+      <HomeButton onClick={() => navigate("/")}>홈으로</HomeButton>
     </Wrapper>
   );
 };
@@ -71,10 +76,12 @@ const Button = styled.button`
   font-size: 1rem;
   font-family: Pretendard;
   border: none;
-  background-color: aliceblue;
+  background-color: #e4e4e4;
   color: black;
+
   white-space: nowrap;
   cursor: pointer;
+
   &:hover {
     background-color: #a4a4a4;
   }
