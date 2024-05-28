@@ -12,6 +12,12 @@ export const counterSlice = createSlice({
     //아래에 각각의 액션에 대한 업데이트 로직이 있는 reducer 함수를 정의내려줍니다.
     //이때 함수들 각각에 대응하는 액션 생성자들이 자동으로 생성됩니다!
     //➡️ +10, -10 리듀서 함수 (혹은 다른 수식)을 추가해봅시다!
+    increment10: (state) => {
+      state.value += 10;
+    },
+    decrement10: (state) => {
+      state.value -= 10;
+    },
     increment: (state) => {
       state.value += 1;
     },
@@ -24,7 +30,8 @@ export const counterSlice = createSlice({
   },
 });
 
-//export const {?? , ?? , ?? } = ??.??;
+export const { increment, decrement, reset } = counterSlice.actions;
+export const { increment10, decrement10 } = counterSlice.actions;
 //-------------------------------------------------------------------------
 //위에서 정의한 액션 생성자들을 export 해줄 때, 이걸 actons로 정의해주려 합니다!
 //그렇다면 어떤 코드를 써줘야 할까요? 위 형식에 맞춰서 써주세요 :)

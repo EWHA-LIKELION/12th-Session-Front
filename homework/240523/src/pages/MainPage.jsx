@@ -24,7 +24,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: lightgray;
+  background-color: #d7e9f5;
   gap: 20px;
 `;
 
@@ -51,7 +51,8 @@ const BtnContainer = styled.div`
     font-size: 1.2rem;
     font-family: Pretendard;
     border: none;
-    background-color: #e4e4e4;
-    color: black;
+    border-radius: 5px;
+    background-color: #140694;
+    color: #ffffff;
   }
 `;

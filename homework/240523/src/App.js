@@ -12,13 +12,15 @@ import TodoPage from "./pages/TodoPage";
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/counter" element={<CounterPage />} />
-          <Route path="/todo-list" element={<TodoPage />} />
-        </Routes>
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<MainPage />} />
+            <Route path="/counter" element={<CounterPage />} />
+            <Route path="/todo-list" element={<TodoPage />} />
+          </Routes>
+        </BrowserRouter>
+      </Provider>
     </>
   );
 }
