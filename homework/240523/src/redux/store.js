@@ -3,7 +3,6 @@ import counterReducer from "./counterSlice";
 import todoReducer from "./todoSlice";
 
 export const store = configureStore({
-  //store를 생성하고 구성하는 configureStore에서 reducer를 정의합니다!
   reducer: {
     counter: counterReducer,
     todos: todoReducer,
