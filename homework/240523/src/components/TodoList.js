@@ -38,6 +38,6 @@ const ListContainer = styled.div`
 
   &::-webkit-scrollbar-thumb {
     background: rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
+    border-radius: 5px;
   }
 `;
