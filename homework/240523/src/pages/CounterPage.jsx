@@ -34,7 +34,7 @@ const CounterPage = () => {
         {/* <button onClick={() => dispatch(decrement())}>-</button> */}
       </ContentContainer>
       <ButtonContainer>
-        {/* <Button onClick={() => dispatch(reset())}>Reset</Button> */}
+        <Button onClick={() => dispatch(reset())}>Reset</Button>
         <Button onClick={() => navigate("/")}>홈으로</Button>
       </ButtonContainer>
     </Wrapper>
