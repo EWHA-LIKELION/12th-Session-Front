@@ -14,13 +14,15 @@ const MainPage = () => {
   //--------------------------------------------------------------------
   // 문제 ) axios를 사용하여 책 목록을 받아오는 API를 호출하는 함수를 작성해주세요.
   // 이때 받아온 데이터는 setBookList를 사용하여 bookList에 저장해주세요.
+  const BASE_URL = " https://likelionbook.pythonanywhere.com/";
+
   const getBookList = () => {
     axios({
       method: "GET",
-      url: "",
+      url: `${BASE_URL}book/`,
     })
       .then((response) => {
-        setBookList(response.data);
+        setBookList(response.data.data);
       })
       .catch((error) => {
         throw new Error(error);
@@ -40,9 +42,9 @@ const MainPage = () => {
           <TopBar />
           <BookList>
             {/* 책 목록이 잘 받아와졌다면 아래 주석을 해제해주세요. */}
-            {/* {bookList.map((book) => (
+            {bookList.map((book) => (
               <Book key={book.id} book={book} />
-            ))} */}
+            ))}
           </BookList>
         </Container>
       </Wrapper>

@@ -9,31 +9,29 @@ import TopBar from "../components/TopBar";
 import book from "../images/book.png";
 import axios from "axios";
 
-const LoginPage = () => {
+const SignupPage = () => {
   const navigate = useNavigate();
   const [id, setID] = useState();
   const [pw, setPW] = useState();
+  const [name, setName] = useState();
 
   const BASE_URL = " https://likelionbook.pythonanywhere.com/";
 
   //-------------------------------------------------------------------------
-  // 문제 1) userID, userName를 key로 id, name 정보를 localStorage에 저장하고 mypage로 이동
-  const goLogin = async () => {
+  // 문제 1) id, pw, name 정보를 data에 담아 post 방식으로 요청 보낸 후 성공 시 로그인 페이지로 이동
+  const goSignup = async () => {
     await axios({
       method: "post",
-      url: `${BASE_URL}account/signin/`,
+      url: `${BASE_URL}account/signup/`,
       data: {
         username: id,
         password: pw,
+        nickname: name,
       },
     })
       .then((response) => {
         console.log(response);
-
-        window.localStorage.setItem("userName", response.data.data.nickname);
-        window.localStorage.setItem("token", response.data.data.access_token);
-
-        navigate("/mypage");
+        navigate("/login");
       })
       .catch((error) => {
         console.log(error);
@@ -57,13 +55,11 @@ const LoginPage = () => {
               placeholder="비밀번호"
               onChange={(e) => setPW(e.target.value)}
             ></input>
-            <button onClick={goLogin}>로그인</button>
-            <button
-              onClick={() => navigate("/signup")}
-              style={{ color: "#809bc3", background: "white" }}
-            >
-              회원가입
-            </button>
+            <input
+              placeholder="닉네임"
+              onChange={(e) => setName(e.target.value)}
+            ></input>
+            <button onClick={goSignup}>가입하기</button>
           </InputWrapper>
         </Container>
       </Wrapper>
@@ -71,7 +67,7 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default SignupPage;
 
 const Wrapper = styled.div`
   height: 100%;

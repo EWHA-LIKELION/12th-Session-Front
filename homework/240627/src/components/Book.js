@@ -11,17 +11,18 @@ import flikeIcon from "../images/fLikeIcon.svg";
 
 const Book = ({ book }) => {
   const navigate = useNavigate();
+  const BASE_URL = " https://likelionbook.pythonanywhere.com/";
 
   const handleLikeBook = () => {
     // 문제 ) 로컬 스토리지에서 token 값을 받아와 token 변수에 할당해주세요.
-    const token = ""; // 이 코드를 수정하시면 됩니다.
+    const token = window.localStorage.getItem("token"); // 이 코드를 수정하시면 됩니다.
 
     // 문제 ) 토큰이 존재하면 axios를 사용하여 좋아요 여부 변경 API를 호출하고,
     // 그게 아니면 navigate를 사용하여 로그인 페이지로 이동하게 해주세요.
     if (token) {
       axios({
-        method: "", // 이 코드를 수정하시면 됩니다.
-        url: "", // 이 코드를 수정하시면 됩니다.
+        method: "patch", // 이 코드를 수정하시면 됩니다.
+        url: `${BASE_URL}book/scrap/${book.id}`, // 이 코드를 수정하시면 됩니다.
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -44,7 +45,7 @@ const Book = ({ book }) => {
       <BookCover data={bookCover[book.id - 1]} />
       <TitleWrapper>
         {book.name}
-        {book.isLiked ? (
+        {book.is_liked ? (
           <img src={flikeIcon} alt="flikeIcon" onClick={handleLikeBook} />
         ) : (
           <img src={likeIcon} alt="likeIcon" onClick={handleLikeBook} />
@@ -61,6 +62,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   color: #6b6c6d;
   font-weight: 600;
+  margin: 0 15px;
 `;
 
 const BookCover = styled.div`

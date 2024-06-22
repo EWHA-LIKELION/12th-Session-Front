@@ -19,11 +19,9 @@ const MyPage = () => {
 
   // 문제 2) localStorage 저장 값 삭제, login 페이지로 이동하기
   const logout = () => {
-    // userID, userName, token 삭제
+    // userName 삭제
     // login 페이지로 이동
-    window.localStorage.removeItem("userID");
     window.localStorage.removeItem("userName");
-    window.localStorage.removeItem("token");
     navigate("/login");
   };
   //--------------------------------------------------------------------
@@ -33,14 +31,16 @@ const MyPage = () => {
 
   //--------------------------------------------------------------------
   // 문제 ) 로컬 스토리지에서 token 값을 받아와 token 변수에 할당해주세요.
-  const token = ""; // 이 코드를 수정하시면 됩니다.
+  const token = window.localStorage.getItem("token"); // 이 코드를 수정하시면 됩니다.
 
   // 문제 ) axios를 사용하여 좋아요한 책 목록을 받아오는 API를 호출하는 함수를 작성해주세요.
   // 이때 받아온 데이터는 setLikedBookList를 사용하여 likedBookList에 저장해주세요.
+  const BASE_URL = " https://likelionbook.pythonanywhere.com/";
+
   const getLikedBooks = () => {
     axios({
-      method: "", // 이 코드를 수정하시면 됩니다.
-      url: "", // 이 코드를 수정하시면 됩니다.
+      method: "get", // 이 코드를 수정하시면 됩니다.
+      url: `${BASE_URL}book/scrap/`, // 이 코드를 수정하시면 됩니다.
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -48,7 +48,7 @@ const MyPage = () => {
       .then((response) => {
         console.log(response);
         // 받아온 데이터를 setLikedBookList를 사용하여 likedBookList에 저장해주세요.
-        setLikedBookList(response.data);
+        setLikedBookList(response.data.data);
       })
       .catch((error) => {
         throw new Error(error);
