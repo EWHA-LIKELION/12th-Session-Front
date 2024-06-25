@@ -17,29 +17,10 @@ const LoginPage = () => {
   const BASE_URL = " https://likelionbook.pythonanywhere.com/";
 
   //-------------------------------------------------------------------------
-  // 문제 1) userID, userName를 key로 id, name 정보를 localStorage에 저장하고 mypage로 이동
-  const goLogin = async () => {
-    await axios({
-      method: "post",
-      url: `${BASE_URL}account/signin/`,
-      data: {
-        username: id,
-        password: pw,
-      },
-    })
-      .then((response) => {
-        console.log(response);
-
-        window.localStorage.setItem("userName", response.data.data.nickname);
-        window.localStorage.setItem("token", response.data.data.access_token);
-
-        navigate("/mypage");
-      })
-      .catch((error) => {
-        console.log(error);
-        throw new Error(error);
-      });
-  };
+  // 문제 ) id, pw 정보를 data에 담아 post 방식으로 요청 보낸 후,
+  //      성공 시 userName, token을 key로 하여 받아온 데이터의 nickname, access_token 정보를
+  //      localStorage에 저장하고 mypage로 이동
+  const goLogin = async () => {};
   // ------------------------------------------------------------------------
 
   return (
@@ -54,6 +35,7 @@ const LoginPage = () => {
               onChange={(e) => setID(e.target.value)}
             ></input>
             <input
+              type="password"
               placeholder="비밀번호"
               onChange={(e) => setPW(e.target.value)}
             ></input>

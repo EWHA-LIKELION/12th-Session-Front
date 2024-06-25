@@ -14,52 +14,33 @@ const MyPage = () => {
   const navigate = useNavigate();
 
   // -----------------------------------------------------------------
-  // 문제 1) localStorage에서 userName 받아와서 변수에 저장하기
-  const userName = window.localStorage.getItem("userName");
-
-  // 문제 2) localStorage 저장 값 삭제, login 페이지로 이동하기
+  // 문제 ) localStorage에서 userName 받아와서 변수에 저장하기
+  //
+  // 문제 ) localStorage 저장 값 삭제, login 페이지로 이동하기
   const logout = () => {
-    // userName 삭제
+    // userName, token 삭제
     // login 페이지로 이동
-    window.localStorage.removeItem("userName");
-    navigate("/login");
   };
   //--------------------------------------------------------------------
 
   // 좋아요한 책 목록을 저장할 state
   const [likedBookList, setLikedBookList] = useState([]);
+  const [render, setRender] = useState(1);
 
   //--------------------------------------------------------------------
   // 문제 ) 로컬 스토리지에서 token 값을 받아와 token 변수에 할당해주세요.
-  const token = window.localStorage.getItem("token"); // 이 코드를 수정하시면 됩니다.
-
+  //
   // 문제 ) axios를 사용하여 좋아요한 책 목록을 받아오는 API를 호출하는 함수를 작성해주세요.
-  // 이때 받아온 데이터는 setLikedBookList를 사용하여 likedBookList에 저장해주세요.
+  //      이때 받아온 데이터는 setLikedBookList를 사용하여 likedBookList에 저장해주세요.
   const BASE_URL = " https://likelionbook.pythonanywhere.com/";
 
-  const getLikedBooks = () => {
-    axios({
-      method: "get", // 이 코드를 수정하시면 됩니다.
-      url: `${BASE_URL}book/scrap/`, // 이 코드를 수정하시면 됩니다.
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    })
-      .then((response) => {
-        console.log(response);
-        // 받아온 데이터를 setLikedBookList를 사용하여 likedBookList에 저장해주세요.
-        setLikedBookList(response.data.data);
-      })
-      .catch((error) => {
-        throw new Error(error);
-      });
-  };
+  const getLikedBooks = () => {};
+  //--------------------------------------------------------------------
 
   // 컴포넌트가 마운트될 때 getLikedBooks 함수를 호출합니다.
   useEffect(() => {
     getLikedBooks();
-  }, []);
-  //--------------------------------------------------------------------
+  }, [render]);
 
   return (
     <>
@@ -69,15 +50,19 @@ const MyPage = () => {
           <NameContainer>
             <img src={book} alt="book" />
             {/* userName이 잘 받아와졌다면 아래 주석을 해제해주세요. */}
-            {userName}님
+            {/* {userName}님 */}
           </NameContainer>
           <LogoutBtn onClick={logout}>로그아웃</LogoutBtn>
           <LikedContainer>
             <p>좋아한 책 목록</p>
             <BookList>
-              {/* userName이 잘 받아와졌다면 아래 주석을 해제해주세요. */}
               {likedBookList.map((book) => (
-                <Book key={book.id} book={book} />
+                <Book
+                  key={book.id}
+                  book={book}
+                  render={render}
+                  setRender={setRender}
+                />
               ))}
             </BookList>
           </LikedContainer>

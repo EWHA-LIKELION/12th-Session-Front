@@ -9,40 +9,20 @@ import { bookCover } from "../_mock/bookData";
 import likeIcon from "../images/likeIcon.svg";
 import flikeIcon from "../images/fLikeIcon.svg";
 
-const Book = ({ book }) => {
+const Book = ({ book, render, setRender }) => {
   const navigate = useNavigate();
-  const BASE_URL = " https://likelionbook.pythonanywhere.com/";
+  const BASE_URL = "https://likelionbook.pythonanywhere.com/";
 
   const handleLikeBook = () => {
     // 문제 ) 로컬 스토리지에서 token 값을 받아와 token 변수에 할당해주세요.
-    const token = window.localStorage.getItem("token"); // 이 코드를 수정하시면 됩니다.
-
+    //
     // 문제 ) 토큰이 존재하면 axios를 사용하여 좋아요 여부 변경 API를 호출하고,
-    // 그게 아니면 navigate를 사용하여 로그인 페이지로 이동하게 해주세요.
-    if (token) {
-      axios({
-        method: "patch", // 이 코드를 수정하시면 됩니다.
-        url: `${BASE_URL}book/scrap/${book.id}`, // 이 코드를 수정하시면 됩니다.
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-        .then((response) => {
-          console.log(response.data);
-        })
-        .catch((error) => {
-          console.error(error);
-          throw new Error(error);
-        });
-    } else {
-      // navigate를 사용하여 로그인 페이지로 이동하는 코드 작성
-      navigate("/login");
-    }
+    //       그게 아니면 navigate를 사용하여 로그인 페이지로 이동하게 해주세요.
   };
 
   return (
     <Wrapper>
-      <BookCover data={bookCover[book.id - 1]} />
+      <BookCover src={bookCover[book.id - 1]} />
       <TitleWrapper>
         {book.name}
         {book.is_liked ? (
@@ -58,6 +38,7 @@ const Book = ({ book }) => {
 export default Book;
 
 const Wrapper = styled.div`
+  width: 170px;
   display: flex;
   flex-direction: column;
   color: #6b6c6d;
@@ -65,15 +46,13 @@ const Wrapper = styled.div`
   margin: 0 15px;
 `;
 
-const BookCover = styled.div`
-  width: 150px;
-  height: 220px;
-  background-image: url(${(props) => props.data});
-  background-size: contain;
-  background-repeat: no-repeat;
+const BookCover = styled.img`
+  width: 100%;
+  height: 240px;
 `;
 
 const TitleWrapper = styled.div`
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
