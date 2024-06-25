@@ -18,7 +18,7 @@ const MyPage = () => {
   //
   // 문제 ) localStorage 저장 값 삭제, login 페이지로 이동하기
   const logout = () => {
-    // userName, token 삭제
+    // localStorage에서 userName, token 삭제
     // login 페이지로 이동
   };
   //--------------------------------------------------------------------
@@ -27,14 +27,15 @@ const MyPage = () => {
   const [likedBookList, setLikedBookList] = useState([]);
   const [render, setRender] = useState(1);
 
+  const BASE_URL = " https://likelionbook.pythonanywhere.com/";
+
   //--------------------------------------------------------------------
   // 문제 ) 로컬 스토리지에서 token 값을 받아와 token 변수에 할당해주세요.
   //
   // 문제 ) axios를 사용하여 좋아요한 책 목록을 받아오는 API를 호출하는 함수를 작성해주세요.
   //      이때 받아온 데이터는 setLikedBookList를 사용하여 likedBookList에 저장해주세요.
-  const BASE_URL = " https://likelionbook.pythonanywhere.com/";
+  const getLikedBooks = async () => {};
 
-  const getLikedBooks = () => {};
   //--------------------------------------------------------------------
 
   // 컴포넌트가 마운트될 때 getLikedBooks 함수를 호출합니다.

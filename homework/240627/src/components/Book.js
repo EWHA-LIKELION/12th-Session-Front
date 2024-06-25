@@ -11,14 +11,17 @@ import flikeIcon from "../images/fLikeIcon.svg";
 
 const Book = ({ book, render, setRender }) => {
   const navigate = useNavigate();
+
   const BASE_URL = "https://likelionbook.pythonanywhere.com/";
 
+  //--------------------------------------------------------------------
   const handleLikeBook = () => {
     // 문제 ) 로컬 스토리지에서 token 값을 받아와 token 변수에 할당해주세요.
     //
     // 문제 ) 토큰이 존재하면 axios를 사용하여 좋아요 여부 변경 API를 호출하고,
     //       그게 아니면 navigate를 사용하여 로그인 페이지로 이동하게 해주세요.
   };
+  //--------------------------------------------------------------------
 
   return (
     <Wrapper>

@@ -21,6 +21,7 @@ const LoginPage = () => {
   //      성공 시 userName, token을 key로 하여 받아온 데이터의 nickname, access_token 정보를
   //      localStorage에 저장하고 mypage로 이동
   const goLogin = async () => {};
+
   // ------------------------------------------------------------------------
 
   return (
