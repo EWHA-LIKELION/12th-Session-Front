@@ -52,7 +52,7 @@ function App() {
       <div>
         <input
           type="email"
-          placeholder="email을 입력하세요"
+          placeholder="email을 입력하세요!!!"
           id="email"
           onChange={(e) => setEmail(e.target.value)}
           value={email}
