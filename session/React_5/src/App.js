@@ -61,7 +61,7 @@ function App() {
       <div>
         <input
           type="password"
-          placeholder="비밀번호를 입력하세요"
+          placeholder="비밀번호를 입력하세요!"
           id="password"
           onChange={(e) => setPassword(e.target.value)}
           value={password}
