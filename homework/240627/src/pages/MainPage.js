@@ -17,10 +17,28 @@ const MainPage = () => {
 
   //--------------------------------------------------------------------
   // 문제 ) 로컬 스토리지에서 token 값을 받아와 token 변수에 할당해주세요.
-  //
+
+  const token = localStorage.getItem("Authorization");
+
   // 문제 ) axios를 사용하여 책 목록을 받아오는 API를 호출하는 함수를 작성해주세요.
-  //      이때 받아온 데이터는 setBookList를 사용하여 bookList에 저장해주세요.
-  const getBookList = async () => {};
+  //이때 받아온 데이터는 setBookList를 사용하여 bookList에 저장해주세요.
+  const getBookList = async () => {
+    await axios({
+      method: "GET",
+      url: "https://likelionbook.pythonanywhere.com/book/",
+      headers: {
+        Authorization: token && `Bearer ${token}`,
+      },
+    })
+      .then((response) => {
+        console.log(response.data);
+        setBookList(response.data.data);
+      })
+      .catch((error) => {
+        console.log(error);
+        throw new Error(error);
+      });
+  };
 
   //--------------------------------------------------------------------
 

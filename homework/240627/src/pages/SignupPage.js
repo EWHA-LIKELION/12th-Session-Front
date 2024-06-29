@@ -11,17 +11,36 @@ import book from "../images/book.png";
 
 const SignupPage = () => {
   const navigate = useNavigate();
-  const [id, setID] = useState();
-  const [pw, setPW] = useState();
-  const [name, setName] = useState();
+  const [id, setID] = useState("");
+  const [pw, setPW] = useState("");
+  const [name, setName] = useState("");
 
   const BASE_URL = " https://likelionbook.pythonanywhere.com/";
 
   //-------------------------------------------------------------------------
   // 문제 ) id, pw, name 정보를 data에 담아 post 방식으로 요청 보낸 후 성공 시 로그인 페이지로 이동
-  const goSignup = async () => {};
+  const goSignup = async () => {
+    await axios({
+      method: "POST",
+      url: "https://likelionbook.pythonanywhere.com/account/signup/",
+      data: {
+        username: id,
+        password: pw,
+        nickname: name,
+      },
+    })
+      .then((response) => {
+        console.log(response.data);
+        navigate("/login");
+      })
 
-  // ------------------------------------------------------------------------
+      .catch((error) => {
+        console.log(error);
+        throw new Error(error);
+      });
+  };
+
+  //-------------------------------------------------------------------------
 
   return (
     <>
