@@ -6,13 +6,41 @@ function App() {
   const [password, setPassword] = useState("");
 
   // 로그인 예제 (LOGIN-SUCCESSFUL)
-  const onLogin = () => {};
+  const onLogin = () => {
+    axios({
+      method: "POST",
+      url: "https://reqres.in/api/login",
+      data: {
+        "email": email,
+        "password": password,
+      },
+    })
+      .then((response) => {
+        console.log(response);
+      
+      //토큰 저장
+      document.cookie = `token=${response.data.token}; expires=Sat, 01 Jan 2025 00:00:00 UTC`; //쿠키 이용
+      localStorage.setItem("token", document.cookie); //로컬스토리지 이용
+
+      const tokenFromLs = localStorage.getItem("token")
+      console.log(tokenFromLs);
+    })
+      .catch((error) => {
+        console.log(error);
+        throw new Error(error);
+    });
+  };
 
   // 쿠키 삭제
-  const deleteCookie = () => {};
+  const deleteCookie = () => {
+    document.cookie = `token=; expires=Thu, 01 Jan 1970 00:00:00 UTC;`
+    window.location.replace("/");
+  };
 
   // 로컬스토리지 삭제
-  const deleteLS = () => {};
+  const deleteLS = () => {
+    localStorage.removeItem("token")
+  };
 
   return (
     <>
@@ -37,7 +65,7 @@ function App() {
           value={password}
         />
       </div>
-      <input type="button" value="로그인" />
+      <input type="button" onClick={onLogin} value="로그인" />
       <br />
       <br />
 
