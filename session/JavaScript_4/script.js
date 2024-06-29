@@ -3,7 +3,7 @@ const btn = document.querySelector(".popup-button");
 
 // 초기화 함수
 const init = () => {
-  form.addEventListener("submit", addTodoItem);
+  // form.addEventListener("submit", addTodoItem);
   btn.addEventListener("click", displayForm);
 };
 
@@ -25,21 +25,27 @@ const addTodoItem = () => {
 // 입력 받은 할 일 출력 함수
 const printTodoItem = (text) => {
   const todoItem = document.createElement("li");
+  const todoFlex = document.createElement("div");
   const todoText = document.createElement("span");
-  const todoDel = document.createElement("button");
+  const todoEnd = document.createElement("button");
+
+  //스타일 추가
+  todoItem.classList.add("text listTodo");
+  todoFlex.classList.add("listFlex");
+  todoEnd.classList.add("square");
 
   // [할 일 내용]
   todoText.innerText = text;
-  todoText.addEventListener("click", toggleTodoToDone);
+  todoEnd.addEventListener("click", toggleTodoToDone);
 
   // [할 일 삭제 버튼]
-  todoDel.innerText = "삭제";
-  todoDel.addEventListener("click", deleteTodoItem);
+  todoText.addEventListener("click", deleteTodoItem);
 
   // [생성한 요소들 연결]
-  todoItem.appendChild(todoText);
-  todoItem.appendChild(todoDel);
-  document.querySelector(".todo-list").appendChild(todoItem);
+  todoItem.appendChild(todoFlex);
+  todoFlex.appendChild(todoEnd);
+  todoFlex.appendChild(todoText);
+  document.querySelector(".List").appendChild(todoItem);
 
   // [input 창 초기화]
   document.querySelector(".todo-input").value = "";

@@ -47,7 +47,6 @@ const Wrapper = styled.div`
   background-color: lightgray;
   gap: 20px;
 `;
-
 const Form = styled.form`
   display: flex;
   justify-content: space-between;

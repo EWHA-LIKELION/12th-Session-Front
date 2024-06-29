@@ -18,9 +18,21 @@ export const counterSlice = createSlice({
     reset: (state) => {
       state.value = 0;
     },
+    incrementTen: (state) => {
+      state.value += 10;
+    },
+    decrementTen: (state) => {
+      state.value -= 10;
+    },
   },
 });
 
-export const { increment, decrement, reset } = counterSlice.actions;
+export const { increment, decrement, reset, incrementTen, decrementTen } =
+  counterSlice.actions;
+//-------------------------------------------------------------------------
+//위에서 정의한 액션 생성자들을 export 해줄 때, 이걸 actons로 정의해주려 합니다!
+//그렇다면 어떤 코드를 써줘야 할까요? 위 형식에 맞춰서 써주세요 :)
+//➡️ 추가한 action 생성자들에 대해서도 같이 넣어주시면 됩니다.
+// hint ✉️ : session 폴더에서 redux.js 에 작성된 코드를 참고하세요~
 
 export default counterSlice.reducer;
