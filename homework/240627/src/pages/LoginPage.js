@@ -14,13 +14,37 @@ const LoginPage = () => {
   const [id, setID] = useState();
   const [pw, setPW] = useState();
 
-  const BASE_URL = " https://likelionbook.pythonanywhere.com/";
+  const BASE_URL = "https://likelionbook.pythonanywhere.com/";
 
   //-------------------------------------------------------------------------
   // 문제 ) id, pw 정보를 data에 담아 post 방식으로 요청 보낸 후,
   //      성공 시 userName, token을 key로 하여 받아온 데이터의 nickname, access_token 정보를
   //      localStorage에 저장하고 mypage로 이동
-  const goLogin = async () => {};
+  const goLogin = async () => {
+    await axios({
+      method: "POST",
+      url: "https://likelionbook.pythonanywhere.com/account/signin/",
+      data: {
+        username: id,
+        password: pw,
+      },
+    })
+      .then((response) => {
+        // localStorage에 저장
+        localStorage.setItem("userName", response.data.data.nickname);
+        localStorage.setItem("token", response.data.data.access_token);
+
+        // mypage로 이동
+        navigate("/mypage");
+
+        console.log("Login successful:", response.data.data);
+      })
+
+      .catch((error) => {
+        console.log(error);
+        throw new Error(error);
+      });
+  };
 
   // ------------------------------------------------------------------------
 

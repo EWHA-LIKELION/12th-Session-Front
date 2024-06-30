@@ -17,9 +17,28 @@ const Book = ({ book, render, setRender }) => {
   //--------------------------------------------------------------------
   const handleLikeBook = () => {
     // 문제 ) 로컬 스토리지에서 token 값을 받아와 token 변수에 할당해주세요.
-    //
+    const token = localStorage.getItem("token");
     // 문제 ) 토큰이 존재하면 axios를 사용하여 좋아요 여부 변경 API를 호출하고,
     //       그게 아니면 navigate를 사용하여 로그인 페이지로 이동하게 해주세요.
+    if (token) {
+      axios({
+        method: "PATCH",
+        url: `https://likelionbook.pythonanywhere.com/book/scrap/${book.id}/`,
+        headers: {
+          Authorization: token && `Bearer ${token}`,
+        },
+      })
+        .then((response) => {
+          console.log(response.message);
+          setRender(render + 1);
+        })
+        .catch((error) => {
+          console.log(error);
+          throw new Error(error);
+        });
+    } else {
+      navigate("/login");
+    }
   };
   //--------------------------------------------------------------------
 
